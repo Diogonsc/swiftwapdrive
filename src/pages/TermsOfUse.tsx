@@ -58,7 +58,7 @@ const TermsOfUse = () => {
                 <ul className="mt-4 space-y-2 text-muted-foreground">
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span>Recebimento automatizado de arquivos de mídia via WhatsApp Business</span>
+                    <span>Recebimento automatizado de arquivos de mídia enviados voluntariamente ao WhatsApp Business da plataforma Swiftwapdrive</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
@@ -106,6 +106,9 @@ const TermsOfUse = () => {
                     <span>Obter consentimento de terceiros antes de enviar arquivos que os envolvam</span>
                   </li>
                 </ul>
+                <p className="mt-4 text-muted-foreground">
+                  O usuário declara ser o controlador dos dados pessoais eventualmente contidos nos arquivos enviados, responsabilizando-se pelo tratamento e consentimento de terceiros.
+                </p>
               </section>
 
               <section>
@@ -129,6 +132,10 @@ const TermsOfUse = () => {
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
                     <span>Recusar o processamento de arquivos que violem políticas de uso</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Suspender o processamento caso haja violação das Políticas do WhatsApp Business ou da Meta</span>
                   </li>
                 </ul>
                 <div className="mt-4 rounded-lg border border-primary/30 bg-primary/5 p-4">
@@ -187,6 +194,9 @@ const TermsOfUse = () => {
                   O consentimento pode ser revogado a qualquer momento através do encerramento 
                   da conta ou desconexão das integrações.
                 </p>
+                <p className="mt-4 text-muted-foreground">
+                  O tratamento de dados é realizado com base no consentimento do titular e na execução do contrato, conforme a Lei Geral de Proteção de Dados (LGPD).
+                </p>
               </section>
 
               <section>
@@ -212,6 +222,9 @@ const TermsOfUse = () => {
                     <span>Cancelamento sem multa, respeitando o período contratado</span>
                   </li>
                 </ul>
+                <p className="mt-4 text-muted-foreground">
+                  Reembolsos, quando aplicáveis, seguirão as políticas comerciais vigentes no momento da contratação.
+                </p>
               </section>
 
               <section>
@@ -262,8 +275,7 @@ const TermsOfUse = () => {
               <section>
                 <h2 className="text-xl font-semibold text-foreground">11. Foro e Legislação Aplicável</h2>
                 <p className="mt-3 text-muted-foreground">
-                  Estes Termos de Uso são regidos pelas leis brasileiras. Fica eleito o foro 
-                  da comarca do domicílio do usuário para dirimir quaisquer controvérsias.
+                  Estes Termos de Uso são regidos pelas leis brasileiras. Fica eleito o foro da comarca de domicílio da Swiftwapdrive, salvo disposição legal em contrário para dirimir quaisquer controvérsias.
                 </p>
               </section>
 

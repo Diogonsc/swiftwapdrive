@@ -68,7 +68,7 @@ const PrivacyPolicy = () => {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span><strong className="text-foreground">Arquivos de mídia:</strong> imagens, vídeos, áudios e documentos enviados voluntariamente pelo usuário via WhatsApp</span>
+                    <span><strong className="text-foreground">Arquivos de mídia:</strong> (imagens, vídeos, áudios e documentos) enviados voluntariamente pelo usuário ao número WhatsApp Business da plataforma Swiftwapdrive.</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
@@ -91,20 +91,19 @@ const PrivacyPolicy = () => {
                 <ul className="mt-4 space-y-2 text-muted-foreground">
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span>Receber arquivos de mídia enviados voluntariamente pelos usuários</span>
+                    <span>Receber arquivos de mídia enviados voluntariamente pelos usuários ao WhatsApp Business da plataforma</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span>Enviar confirmações transacionais sobre o processamento dos arquivos</span>
+                    <span>Enviar mensagens transacionais estritamente necessárias ao funcionamento do serviço</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span>Notificar sobre status de upload e organização dos arquivos</span>
+                    <span>Notificar o status de processamento e armazenamento dos arquivos</span>
                   </li>
                 </ul>
                 <p className="mt-4 text-muted-foreground">
-                  Todas as comunicações seguem as diretrizes e políticas da Meta para uso 
-                  comercial do WhatsApp Business.
+                A Swiftwapdrive não utiliza o WhatsApp para envio de mensagens promocionais ou marketing, e todas as interações ocorrem com consentimento explícito do usuário, em conformidade com as Políticas do WhatsApp Business.
                 </p>
               </section>
 
@@ -166,6 +165,9 @@ const PrivacyPolicy = () => {
               <section>
                 <h2 className="text-xl font-semibold text-foreground">6. Conformidade com a LGPD</h2>
                 <p className="mt-3 text-muted-foreground">
+                  O tratamento de dados pessoais é realizado com base no consentimento do titular e na execução de contrato, conforme previsto na LGPD.
+                </p>
+                <p className="mt-3 text-muted-foreground">
                   Em conformidade com a LGPD, garantimos aos usuários os seguintes direitos:
                 </p>
                 <ul className="mt-4 space-y-2 text-muted-foreground">
@@ -206,6 +208,13 @@ const PrivacyPolicy = () => {
                     Responsável: Diogo Nascimento dos Santos
                   </p>
                 </div>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-semibold text-foreground">8. Alterações nesta Política</h2>
+                <p className="mt-3 text-muted-foreground">
+                  Esta Política de Privacidade pode ser atualizada periodicamente. A versão mais recente estará sempre disponível no site da Swiftwapdrive.
+                </p>
               </section>
             </div>
           </div>
