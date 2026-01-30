@@ -201,7 +201,7 @@ const PrivacyPolicy = () => {
                 <div className="mt-4 rounded-lg border border-border bg-muted/30 p-4">
                   <p className="text-foreground">
                     <strong>Swiftwapdrive</strong><br />
-                    E-mail: contato@swiftwapdrive.com<br />
+                    E-mail: diogos.nascimento@outlook.com<br />
                     CNPJ: 56.151.919/0001-30<br />
                     Responsável: Diogo Nascimento dos Santos
                   </p>

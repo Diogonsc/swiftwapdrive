@@ -48,15 +48,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:contato@swiftwapdrive.com"
+                  href="mailto:diogos.nascimento@outlook.com"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  contato@swiftwapdrive.com
+                  diogos.nascimento@outlook.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5521973819373"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"

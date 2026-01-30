@@ -62,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email notification to admin
     const emailResponse = await sendEmail({
       from: "Swiftwapdrive <onboarding@resend.dev>",
-      to: ["contato@swiftwapdrive.com"],
+      to: ["diogos.nascimento@outlook.com"],
       replyTo: email,
       subject: `Nova mensagem de contato - ${name}`,
       html: `

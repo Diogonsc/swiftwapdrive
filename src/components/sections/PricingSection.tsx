@@ -41,15 +41,14 @@ const plans = [
     icon: Crown,
     popular: false,
     features: [
-      "Arquivos ilimitados",
-      "Números ilimitados",
-      "Contas ilimitadas",
-      "Organização personalizada",
-      "Dashboard avançado",
-      "Suporte 24/7",
-      "API dedicada",
-      "Gerente de conta",
-    ],
+      "Até 10.000 arquivos por mês",
+      "Até 10 números de WhatsApp",
+      "Até 10 contas Google Drive",
+      "Organização avançada e personalizada",
+      "Dashboard avançado com relatórios",
+      "Suporte prioritário 24/7",
+      "Possibilidade de expansão sob demanda"
+    ]    
   },
 ];
 

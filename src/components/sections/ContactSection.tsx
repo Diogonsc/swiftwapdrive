@@ -95,7 +95,7 @@ const ContactSection = () => {
             <ScrollReveal delay={0.1} className="lg:col-span-2">
               <div className="space-y-6">
                 <a
-                  href="mailto:contato@swiftwapdrive.com"
+                  href="mailto:diogos.nascimento@outlook.com"
                   className="group flex items-center gap-4 rounded-xl border border-border bg-background p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">
@@ -103,12 +103,12 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-sm text-muted-foreground">contato@swiftwapdrive.com</p>
+                    <p className="text-sm text-muted-foreground">diogos.nascimento@outlook.com</p>
                   </div>
                 </a>
 
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5521973819373"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 rounded-xl border border-border bg-background p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
@@ -118,7 +118,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">WhatsApp</h3>
-                    <p className="text-sm text-muted-foreground">+55 11 99999-9999</p>
+                    <p className="text-sm text-muted-foreground">+55 21 97381-9373</p>
                   </div>
                 </a>
 
@@ -174,7 +174,7 @@ const ContactSection = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="(11) 99999-9999"
+                      placeholder="(xx) xxxxx-xxxx"
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={isLoading}
