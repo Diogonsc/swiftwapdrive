@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cloud, MessageSquare, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -17,30 +18,55 @@ const HeroSection = () => {
       <div className="container relative py-20 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
-          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm"
+          >
             <Shield className="h-4 w-4 text-primary" />
             <span>Plataforma SaaS segura e confiável</span>
-          </div>
+          </motion.div>
 
           {/* Title */}
-          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+          >
             Swiftwapdrive
-          </h1>
+          </motion.h1>
 
           {/* Subtitle */}
-          <p className="animate-fade-in-delay-1 mt-4 text-xl font-medium text-primary md:text-2xl">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 text-xl font-medium text-primary md:text-2xl"
+          >
             Automação de arquivos via WhatsApp integrada ao Google Drive
-          </p>
+          </motion.p>
 
           {/* Description */}
-          <p className="animate-fade-in-delay-2 mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+          >
             Swiftwapdrive é um sistema SaaS que processa automaticamente mídias enviadas 
             voluntariamente ao WhatsApp Business da plataforma e as armazena de forma 
             organizada no Google Drive do usuário, sem ações manuais.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="animate-fade-in-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
             <Button
               size="lg"
               onClick={() => scrollToSection("como-funciona")}
@@ -56,11 +82,20 @@ const HeroSection = () => {
             >
               Fale conosco
             </Button>
-          </div>
+          </motion.div>
 
           {/* Feature highlights */}
-          <div className="animate-fade-in-delay-3 mt-16 grid gap-6 sm:grid-cols-3">
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16 grid gap-6 sm:grid-cols-3"
+          >
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <MessageSquare className="h-6 w-6 text-primary" />
               </div>
@@ -68,9 +103,13 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground">
                 Integração oficial e segura com a API do WhatsApp
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur">
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <Cloud className="h-6 w-6 text-primary" />
               </div>
@@ -78,9 +117,13 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground">
                 Armazenamento seguro na nuvem do usuário
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur">
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
@@ -88,8 +131,8 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground">
                 Conformidade total com a legislação brasileira
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
