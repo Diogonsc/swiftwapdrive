@@ -8,6 +8,9 @@ import {
   LayoutDashboard,
   Shield,
 } from "lucide-react";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -56,32 +59,34 @@ const FeaturesSection = () => {
   return (
     <section id="funcionalidades" className="py-20 md:py-28">
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Principais funcionalidades
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Tudo o que você precisa para automatizar o recebimento e armazenamento de arquivos
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Principais funcionalidades
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Tudo o que você precisa para automatizar o recebimento e armazenamento de arquivos
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-16 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group rounded-xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md"
-              style={{
-                animationDelay: `${index * 0.05}s`,
-              }}
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <feature.icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="mb-2 font-semibold text-foreground">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
-            </div>
+        <StaggerContainer className="mx-auto mt-16 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => (
+            <StaggerItem key={feature.title}>
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="group h-full rounded-xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  <feature.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="mb-2 font-semibold text-foreground">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

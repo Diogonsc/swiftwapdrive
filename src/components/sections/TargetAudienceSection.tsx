@@ -1,4 +1,7 @@
 import { User, Building2, Stethoscope, Scale, Dumbbell, Church, Store } from "lucide-react";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
+import { motion } from "framer-motion";
 
 const audiences = [
   {
@@ -42,34 +45,36 @@ const TargetAudienceSection = () => {
   return (
     <section id="publico" className="bg-muted/30 py-20 md:py-28">
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Para quem é o Swiftwapdrive?
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Ideal para profissionais e empresas que recebem muitos arquivos via WhatsApp
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Para quem é o Swiftwapdrive?
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Ideal para profissionais e empresas que recebem muitos arquivos via WhatsApp
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {audiences.map((audience, index) => (
-            <div
-              key={audience.title}
-              className="flex gap-4 rounded-xl border border-border bg-background p-6 shadow-sm"
-              style={{
-                animationDelay: `${index * 0.05}s`,
-              }}
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <audience.icon className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">{audience.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{audience.description}</p>
-              </div>
-            </div>
+        <StaggerContainer className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {audiences.map((audience) => (
+            <StaggerItem key={audience.title}>
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex h-full gap-4 rounded-xl border border-border bg-background p-6 shadow-sm"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <audience.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">{audience.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{audience.description}</p>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

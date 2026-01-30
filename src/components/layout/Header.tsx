@@ -39,6 +39,12 @@ const Header = () => {
             Funcionalidades
           </button>
           <button
+            onClick={() => scrollToSection("planos")}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Planos
+          </button>
+          <button
             onClick={() => scrollToSection("contato")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -81,6 +87,12 @@ const Header = () => {
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Funcionalidades
+            </button>
+            <button
+              onClick={() => scrollToSection("planos")}
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Planos
             </button>
             <button
               onClick={() => scrollToSection("contato")}

@@ -6,6 +6,7 @@ import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import WhatsAppUsageSection from "@/components/sections/WhatsAppUsageSection";
 import TargetAudienceSection from "@/components/sections/TargetAudienceSection";
+import PricingSection from "@/components/sections/PricingSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
         <FeaturesSection />
         <WhatsAppUsageSection />
         <TargetAudienceSection />
+        <PricingSection />
         <ContactSection />
       </main>
       <Footer />

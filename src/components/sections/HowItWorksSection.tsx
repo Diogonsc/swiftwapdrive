@@ -1,4 +1,6 @@
 import { MessageSquare, Cpu, Download, CloudUpload, BarChart3 } from "lucide-react";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -42,14 +44,16 @@ const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="bg-muted/30 py-20 md:py-28">
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Como funciona
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Um processo simples, automatizado e seguro em 5 etapas
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Como funciona
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Um processo simples, automatizado e seguro em 5 etapas
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="relative">
@@ -58,27 +62,27 @@ const HowItWorksSection = () => {
 
             <div className="space-y-8">
               {steps.map((step, index) => (
-                <div
-                  key={step.number}
-                  className="relative flex gap-6"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  {/* Step indicator */}
-                  <div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-border bg-background shadow-md">
-                    <step.icon className="h-7 w-7 text-primary" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 rounded-xl border border-border bg-background p-6 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-bold text-primary">{step.number}</span>
-                      <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                <ScrollReveal key={step.number} delay={index * 0.1}>
+                  <motion.div
+                    whileHover={{ x: 10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="relative flex gap-6"
+                  >
+                    {/* Step indicator */}
+                    <div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-border bg-background shadow-md">
+                      <step.icon className="h-7 w-7 text-primary" />
                     </div>
-                    <p className="mt-2 text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
+
+                    {/* Content */}
+                    <div className="flex-1 rounded-xl border border-border bg-background p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm font-bold text-primary">{step.number}</span>
+                        <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                      </div>
+                      <p className="mt-2 text-muted-foreground">{step.description}</p>
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
