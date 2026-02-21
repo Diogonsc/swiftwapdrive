@@ -43,6 +43,16 @@ const Footer = () => {
                   Termos de Uso
                 </a>
               </li>
+              <li>
+                <a
+                  href="/data-deletion.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Exclusão de Dados
+                </a>
+              </li>
             </ul>
           </div>
 
