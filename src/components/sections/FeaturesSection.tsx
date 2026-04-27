@@ -16,42 +16,42 @@ const features = [
   {
     icon: FileDown,
     title: "Recebimento automático",
-    description: "Arquivos enviados ao WhatsApp são recebidos automaticamente pela plataforma.",
+    description: "Nada fica perdido no celular: cada envio entra no fluxo sem você intervir.",
   },
   {
     icon: CloudUpload,
     title: "Upload seguro",
-    description: "Transferência criptografada para o Google Drive do usuário.",
+    description: "Seus arquivos vão para o Drive com criptografia, do jeito que a Meta e o Google exigem.",
   },
   {
     icon: FolderKanban,
     title: "Organização automática",
-    description: "Arquivos organizados automaticamente por tipo e data de envio.",
+    description: "Encontre documentos por conversa, tipo e data — sem criar pasta à mão.",
   },
   {
     icon: UserCheck,
     title: "Autenticação de usuários",
-    description: "Sistema completo de cadastro e login para acesso seguro.",
+    description: "Sua equipe acessa só o que deve, com login próprio e rastreável.",
   },
   {
     icon: KeyRound,
     title: "OAuth com Google Drive",
-    description: "Autorização segura via OAuth para acesso ao Drive do usuário.",
+    description: "Você autoriza uma vez; depois disso o Drive é seu, não da plataforma.",
   },
   {
     icon: Gauge,
-    title: "Controle de planos",
-    description: "Gestão de planos e limites mensais de uso por usuário.",
+    title: "Uso transparente",
+    description: "Veja quantas mensagens foram processadas e planeje custos com clareza.",
   },
   {
     icon: LayoutDashboard,
     title: "Dashboard completo",
-    description: "Painel administrativo para acompanhar uso e gerenciar arquivos.",
+    description: "Visão rápida do que entrou, para onde foi e como está o consumo do mês.",
   },
   {
     icon: Shield,
     title: "Conformidade LGPD",
-    description: "Plataforma em total conformidade com a legislação brasileira.",
+    description: "Menos risco na rotina: dados tratados com base na lei brasileira.",
   },
 ];
 
@@ -62,10 +62,10 @@ const FeaturesSection = () => {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Principais funcionalidades
+              O que muda no seu dia a dia
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Tudo o que você precisa para automatizar o recebimento e armazenamento de arquivos
+              Menos retrabalho, mais tempo com cliente — com a mesma stack que você já usa
             </p>
           </div>
         </ScrollReveal>

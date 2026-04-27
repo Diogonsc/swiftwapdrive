@@ -45,7 +45,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-xl font-medium text-primary md:text-2xl"
           >
-            Automação de arquivos via WhatsApp integrada ao Google Drive
+            Receba arquivos no WhatsApp e organize tudo automaticamente no Google Drive, sem esforço
+            manual
           </motion.p>
 
           {/* Description */}
@@ -55,9 +56,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
           >
-            Swiftwapdrive é um sistema SaaS que processa automaticamente mídias enviadas 
-            voluntariamente ao WhatsApp Business da plataforma e as armazena de forma 
-            organizada no Google Drive do usuário, sem ações manuais.
+            Menos tempo baixando e renomeando pastas: suas mídias chegam pelo WhatsApp Business e
+            vão direto para o seu Google Drive, organizadas e prontas para você trabalhar.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -101,7 +101,7 @@ const HeroSection = () => {
               </div>
               <h3 className="font-semibold text-foreground">WhatsApp Business API</h3>
               <p className="text-sm text-muted-foreground">
-                Integração oficial e segura com a API do WhatsApp
+                Canal oficial onde seus clientes já enviam documentos e fotos
               </p>
             </motion.div>
 
@@ -115,7 +115,7 @@ const HeroSection = () => {
               </div>
               <h3 className="font-semibold text-foreground">Google Drive</h3>
               <p className="text-sm text-muted-foreground">
-                Armazenamento seguro na nuvem do usuário
+                Tudo na sua nuvem, com a estrutura de pastas que você já conhece
               </p>
             </motion.div>
 
@@ -129,7 +129,7 @@ const HeroSection = () => {
               </div>
               <h3 className="font-semibold text-foreground">Segurança LGPD</h3>
               <p className="text-sm text-muted-foreground">
-                Conformidade total com a legislação brasileira
+                Tranquilidade jurídica para lidar com dados de clientes no dia a dia
               </p>
             </motion.div>
           </motion.div>

@@ -36,7 +36,7 @@ const steps = [
     icon: BarChart3,
     title: "Contabilização",
     description:
-      "O uso é contabilizado conforme o plano contratado, com total transparência no dashboard.",
+      "Cada mensagem processada entra no seu painel: você sabe exatamente o que consumiu do pacote mensal e do excedente.",
   },
 ];
 

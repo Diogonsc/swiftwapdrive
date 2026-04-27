@@ -42,7 +42,7 @@ const Header = () => {
             onClick={() => scrollToSection("planos")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Planos
+            Preço
           </button>
           <button
             onClick={() => scrollToSection("contato")}
@@ -92,7 +92,7 @@ const Header = () => {
               onClick={() => scrollToSection("planos")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Planos
+              Preço
             </button>
             <button
               onClick={() => scrollToSection("contato")}

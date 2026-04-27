@@ -11,8 +11,8 @@ const AboutSection = () => {
               O que é o Swiftwapdrive?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Swiftwapdrive é uma plataforma SaaS (Software as a Service) desenvolvida para 
-              automatizar o processo de recebimento e armazenamento de arquivos de mídia.
+              Swiftwapdrive é uma plataforma SaaS pensada para quem vive recebendo mídias pelo
+              WhatsApp e quer tudo no Google Drive sem copiar, colar ou baixar arquivo por arquivo.
             </p>
           </div>
         </ScrollReveal>
