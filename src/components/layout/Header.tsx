@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../../../public/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +20,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2">
           <div className="flex items-center justify-center rounded-lg">
             <img
-              src={logo}
+              src="/logo.png"
               alt="Swiftwapdrive"
               className="h-10 w-10 rounded-lg text-primary-foreground"
             />

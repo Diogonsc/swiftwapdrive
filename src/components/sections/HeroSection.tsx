@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import notebook from "../../../public/notebook.png";
-import smartphone from "../../../public/phone.png";
 import { FaCheck } from "react-icons/fa6";
 
 const HeroSection = () => {
@@ -127,10 +125,10 @@ const HeroSection = () => {
             className="relative mx-auto w-[102%] max-w-none sm:w-[101%] lg:w-[106%] lg:-ml-2"
           >
             <div className="w-full">
-              <img src={notebook} alt="Notebook" className="h-auto w-full scale-100 object-contain" />
+              <img src="/notebook.png" alt="Notebook" className="h-auto w-full scale-100 object-contain" />
             </div>
             <div className="absolute -bottom-6 right-3 z-10 w-[32%] max-w-[180px] sm:-bottom-8 sm:right-4 sm:w-[30%] sm:max-w-[220px]">
-              <img src={smartphone} alt="WhatsApp" className="h-auto w-full object-contain drop-shadow-xl" />
+              <img src="/phone.png" alt="WhatsApp" className="h-auto w-full object-contain drop-shadow-xl" />
             </div>
           </motion.div>
         </div>

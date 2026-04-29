@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../../../public/logo.png";
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-primary">
@@ -10,7 +9,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-2">
               <div className="flex items-center justify-center rounded-lg bg-white p-2">
                 <img
-                  src={logo}
+                  src="/logo.png"
                   alt="Swiftwapdrive"
                   className="h-10 w-10 rounded-lg text-primary-foreground"
                 />
