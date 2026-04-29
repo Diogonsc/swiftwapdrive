@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "../../../public/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,10 +19,16 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">S</span>
+          <div className="flex items-center justify-center rounded-lg">
+            <img
+              src={logo}
+              alt="Swiftwapdrive"
+              className="h-10 w-10 rounded-lg text-primary-foreground"
+            />
           </div>
-          <span className="text-xl font-semibold text-foreground">Swiftwapdrive</span>
+          <span className="text-xl font-semibold text-foreground">
+            Swiftwapdrive
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -33,10 +40,16 @@ const Header = () => {
             Como funciona
           </button>
           <button
-            onClick={() => scrollToSection("funcionalidades")}
+            onClick={() => scrollToSection("sobre")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Funcionalidades
+            Recursos
+          </button>
+          <button
+            onClick={() => scrollToSection("publico")}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Para quem é
           </button>
           <button
             onClick={() => scrollToSection("planos")}
@@ -53,8 +66,8 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex">
-          <Button onClick={() => scrollToSection("contato")}>
-            Fale conosco
+          <Button onClick={() => scrollToSection("planos")}>
+            Começar grátis
           </Button>
         </div>
 
@@ -83,10 +96,16 @@ const Header = () => {
               Como funciona
             </button>
             <button
-              onClick={() => scrollToSection("funcionalidades")}
+              onClick={() => scrollToSection("sobre")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Funcionalidades
+              Recursos
+            </button>
+            <button
+              onClick={() => scrollToSection("publico")}
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Para quem é
             </button>
             <button
               onClick={() => scrollToSection("planos")}
@@ -100,8 +119,11 @@ const Header = () => {
             >
               Contato
             </button>
-            <Button onClick={() => scrollToSection("contato")} className="w-full">
-              Fale conosco
+            <Button
+              onClick={() => scrollToSection("planos")}
+              className="w-full"
+            >
+              Começar grátis
             </Button>
           </nav>
         </div>

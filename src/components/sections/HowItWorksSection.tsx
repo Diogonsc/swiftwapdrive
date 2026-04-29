@@ -1,14 +1,15 @@
-import { MessageSquare, Cpu, Download, CloudUpload, BarChart3 } from "lucide-react";
+import { Cpu, Download, CloudUpload, BarChart3 } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const steps = [
   {
     number: "01",
-    icon: MessageSquare,
+    icon: FaWhatsapp,
     title: "Envio voluntário",
     description:
-      "O usuário envia uma mídia voluntariamente ao WhatsApp Business da plataforma Swiftwapdrive.",
+      "O usuário envia uma mídia voluntariamente ao WhatsApp da sua empresa.",
   },
   {
     number: "02",
@@ -43,7 +44,7 @@ const steps = [
 const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="bg-muted/30 py-20 md:py-28">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

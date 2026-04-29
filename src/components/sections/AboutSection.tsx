@@ -1,84 +1,49 @@
-import { CheckCircle2, FileImage, FileVideo, FileAudio, FileText } from "lucide-react";
+import { CheckCircle2, FileAudio, FileImage, FileText, FileVideo } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 md:py-28">
-      <div className="container">
+    <section id="sobre" className="bg-muted/30 py-16 md:py-24">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              O que é o Swiftwapdrive?
+              O que você ganha com o Swiftwapdrive
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Swiftwapdrive é uma plataforma SaaS pensada para quem vive recebendo mídias pelo
-              WhatsApp e quer tudo no Google Drive sem copiar, colar ou baixar arquivo por arquivo.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="mx-auto mt-16 max-w-5xl">
+        <div className="mx-auto mt-10 max-w-5xl">
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Left column - Key points */}
-            <div className="space-y-6">
+            <div className="rounded-xl border border-border bg-background p-7 shadow-md">
               <ScrollReveal delay={0.1}>
-                <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Plataforma SaaS completa</h3>
-                    <p className="mt-1 text-muted-foreground">
-                      Sistema profissional com infraestrutura robusta, autenticação de usuários 
-                      e dashboard administrativo.
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.2}>
-                <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">WhatsApp Business API oficial</h3>
-                    <p className="mt-1 text-muted-foreground">
-                      Utilizamos exclusivamente a API oficial do WhatsApp Business da Meta, 
-                      garantindo conformidade e segurança.
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.3}>
-                <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Apenas arquivos de mídia</h3>
-                    <p className="mt-1 text-muted-foreground">
-                      Processamos somente imagens, vídeos, áudios e documentos. 
-                      <strong className="text-foreground"> Não lemos nem processamos mensagens de texto.</strong>
-                    </p>
-                  </div>
-                </div>
+                <ul className="space-y-5">
+                  {[
+                    "Fim da bagunça no WhatsApp",
+                    "Mais tempo para o que importa",
+                    "Segurança e tranquilidade",
+                    "Acesso rápido e fácil",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                        <CheckCircle2 className="h-5 w-5 text-primary" />
+                      </div>
+                      <span className="text-base font-medium text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </ScrollReveal>
             </div>
 
-            {/* Right column - Supported files */}
             <ScrollReveal delay={0.2} direction="right">
-              <div className="rounded-2xl border border-border bg-muted/30 p-8">
-                <h3 className="mb-6 text-center font-semibold text-foreground">
-                  Tipos de arquivo suportados
-                </h3>
+              <div className="rounded-xl border border-border bg-background p-7 shadow-md">
+                <h3 className="mb-6 text-xl font-semibold text-foreground">Chega de procurar arquivos</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-3 rounded-lg bg-background p-4 shadow-sm">
                     <FileImage className="h-8 w-8 text-primary" />
                     <div>
                       <p className="font-medium text-foreground">Imagens</p>
-                      <p className="text-xs text-muted-foreground">JPG, PNG, WEBP</p>
+                      <p className="text-xs text-muted-foreground">Fotos organizadas</p>
                     </div>
                   </div>
 
@@ -86,7 +51,7 @@ const AboutSection = () => {
                     <FileVideo className="h-8 w-8 text-primary" />
                     <div>
                       <p className="font-medium text-foreground">Vídeos</p>
-                      <p className="text-xs text-muted-foreground">MP4, MOV, AVI</p>
+                      <p className="text-xs text-muted-foreground">Tudo no lugar certo</p>
                     </div>
                   </div>
 
@@ -94,7 +59,7 @@ const AboutSection = () => {
                     <FileAudio className="h-8 w-8 text-primary" />
                     <div>
                       <p className="font-medium text-foreground">Áudios</p>
-                      <p className="text-xs text-muted-foreground">MP3, OGG, WAV</p>
+                      <p className="text-xs text-muted-foreground">Sem busca manual</p>
                     </div>
                   </div>
 
@@ -102,7 +67,7 @@ const AboutSection = () => {
                     <FileText className="h-8 w-8 text-primary" />
                     <div>
                       <p className="font-medium text-foreground">Documentos</p>
-                      <p className="text-xs text-muted-foreground">PDF, DOC, XLS</p>
+                      <p className="text-xs text-muted-foreground">Rápido de localizar</p>
                     </div>
                   </div>
                 </div>

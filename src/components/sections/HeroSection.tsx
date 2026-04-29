@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, MessageSquare, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import notebook from "../../../public/notebook.png";
+import smartphone from "../../../public/phone.png";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -12,126 +14,96 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden gradient-subtle">
-      {/* Background pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
-      
-      <div className="container relative py-20 md:py-32">
-        <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm"
-          >
-            <Shield className="h-4 w-4 text-primary" />
-            <span>Plataforma SaaS segura e confiável</span>
-          </motion.div>
 
-          {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Swiftwapdrive
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-xl font-medium text-primary md:text-2xl"
-          >
-            Receba arquivos no WhatsApp e organize tudo automaticamente no Google Drive, sem esforço
-            manual
-          </motion.p>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
-          >
-            Menos tempo baixando e renomeando pastas: suas mídias chegam pelo WhatsApp Business e
-            vão direto para o seu Google Drive, organizadas e prontas para você trabalhar.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("como-funciona")}
-              className="gap-2 shadow-primary"
+      <div className="relative mx-auto w-full max-w-[1280px] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground"
             >
-              Como funciona
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("contato")}
-            >
-              Fale conosco
-            </Button>
-          </motion.div>
+              Organize automaticamente no Google Drive
+            </motion.p>
 
-          {/* Feature highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16 grid gap-6 sm:grid-cols-3"
-          >
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.05 }}
+              className="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-[3.2rem]"
+            >
+              Chega de perder arquivo no WhatsApp e <span className="text-primary">refazer trabalho.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.12 }}
+              className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg"
+            >
+              Receba fotos, vídeos, áudios e documentos como sempre. O Swiftwapdrive organiza tudo
+              automaticamente no seu Google Drive.
+            </motion.p>
+
+            <motion.ul
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.18 }}
+              className="mt-6 space-y-2.5"
+            >
+              {[
+                "Economize até 3 horas por mês",
+                "Nunca mais perca arquivos",
+                "Tudo organizado e seguro",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm font-medium text-foreground sm:text-base">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
+
             <motion.div
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.24 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <MessageSquare className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground">WhatsApp Business API</h3>
-              <p className="text-sm text-muted-foreground">
-                Canal oficial onde seus clientes já enviam documentos e fotos
-              </p>
+              <Button size="lg" onClick={() => scrollToSection("planos")} className="gap-2 shadow-primary">
+                Começar agora
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => scrollToSection("como-funciona")}>
+                Ver como funciona
+              </Button>
             </motion.div>
 
             <motion.div
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3 }}
+              className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground sm:text-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <Cloud className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground">Google Drive</h3>
-              <p className="text-sm text-muted-foreground">
-                Tudo na sua nuvem, com a estrutura de pastas que você já conhece
-              </p>
+              <span>Sem instalação</span>
+              <span>Configuração em minutos</span>
+              <span>Funciona com WhatsApp oficial</span>
             </motion.div>
+          </div>
 
-            <motion.div
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-background/80 p-6 shadow-sm backdrop-blur"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <Shield className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground">Segurança LGPD</h3>
-              <p className="text-sm text-muted-foreground">
-                Tranquilidade jurídica para lidar com dados de clientes no dia a dia
-              </p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="relative mx-auto w-[102%] max-w-none sm:w-[101%] lg:w-[106%] lg:-ml-2"
+          >
+            <div className="w-full">
+              <img src={notebook} alt="Notebook" className="h-auto w-full scale-100 object-contain" />
+            </div>
+            <div className="absolute -bottom-6 right-3 z-10 w-[32%] max-w-[180px] sm:-bottom-8 sm:right-4 sm:w-[30%] sm:max-w-[220px]">
+              <img src={smartphone} alt="WhatsApp" className="h-auto w-full object-contain drop-shadow-xl" />
+            </div>
           </motion.div>
         </div>
       </div>

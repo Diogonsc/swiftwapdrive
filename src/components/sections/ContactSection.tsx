@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Mail, MessageCircle, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -12,8 +11,8 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
   email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
-  phone: z.string().trim().max(20, "Telefone muito longo").optional(),
-  message: z.string().trim().min(1, "Mensagem é obrigatória").max(1000, "Mensagem muito longa"),
+  phone: z.string().trim().min(8, "WhatsApp é obrigatório").max(20, "WhatsApp muito longo"),
+  segment: z.string().trim().min(2, "Segmento é obrigatório").max(80, "Segmento muito longo"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -24,7 +23,7 @@ const ContactSection = () => {
     name: "",
     email: "",
     phone: "",
-    message: "",
+    segment: "",
   });
   const { toast } = useToast();
 
@@ -52,7 +51,12 @@ const ContactSection = () => {
 
     try {
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: result.data,
+        body: {
+          name: result.data.name,
+          email: result.data.email,
+          phone: result.data.phone,
+          message: `Segmento: ${result.data.segment}. Quero organizar meus arquivos no Swiftwapdrive.`,
+        },
       });
 
       if (error) throw error;
@@ -62,7 +66,7 @@ const ContactSection = () => {
         description: "Entraremos em contato em breve.",
       });
 
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", segment: "" });
     } catch (error: any) {
       console.error("Error sending message:", error);
       toast({
@@ -77,14 +81,15 @@ const ContactSection = () => {
 
   return (
     <section id="contato" className="py-20 md:py-28">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Entre em contato
+              Organize seu WhatsApp hoje — e pare de torcer para arquivo não sumir
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Tire suas dúvidas ou solicite uma demonstração da plataforma
+              Sem complicação: fale com a gente, veja se encaixa na sua rotina e comece com teste
+              grátis. Sem pegadinha, sem instalação estranha.
             </p>
           </div>
         </ScrollReveal>
@@ -123,11 +128,10 @@ const ContactSection = () => {
                 </a>
 
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
-                  <h3 className="font-semibold text-foreground">
-                    Pronto para automatizar?
-                  </h3>
+                  <h3 className="font-semibold text-foreground">Comece agora sem complicação</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Preencha o formulário ao lado e receba uma demonstração personalizada.
+                    Preencha em menos de 1 minuto. Nossa equipe te ajuda a configurar sem risco e
+                    sem dor de cabeça.
                   </p>
                 </div>
               </div>
@@ -168,31 +172,36 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone (opcional)</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="(xx) xxxxx-xxxx"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      disabled={isLoading}
-                    />
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">WhatsApp *</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="(xx) xxxxx-xxxx"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="segment">Segmento *</Label>
+                      <Input
+                        id="segment"
+                        name="segment"
+                        placeholder="Ex.: escritório, clínica, empresa"
+                        value={formData.segment}
+                        onChange={handleChange}
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Mensagem *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Como podemos ajudar?"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      disabled={isLoading}
-                    />
+                  <div className="rounded-lg border border-border bg-muted/30 p-4 text-sm text-muted-foreground">
+                    Ao enviar, você concorda em receber contato para ativação do teste grátis.
                   </div>
 
                   <Button type="submit" size="lg" className="w-full gap-2" disabled={isLoading}>
@@ -204,7 +213,7 @@ const ContactSection = () => {
                     ) : (
                       <>
                         <Send className="h-4 w-4" />
-                        Enviar mensagem
+                        Quero organizar meus arquivos agora
                       </>
                     )}
                   </Button>

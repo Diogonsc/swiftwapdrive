@@ -1,92 +1,108 @@
-import {
-  FileDown,
-  CloudUpload,
-  FolderKanban,
-  UserCheck,
-  KeyRound,
-  Gauge,
-  LayoutDashboard,
-  Shield,
-} from "lucide-react";
+import { Clock3, FolderSearch, RefreshCcw, TrendingDown } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
-import { motion } from "framer-motion";
+import { FaBuilding, FaComputer } from "react-icons/fa6";
 
 const features = [
   {
-    icon: FileDown,
-    title: "Recebimento automático",
-    description: "Nada fica perdido no celular: cada envio entra no fluxo sem você intervir.",
+    icon: RefreshCcw,
+    title: "Menos retrabalho",
+    description: "Pare de baixar e organizar tudo na mão.",
   },
   {
-    icon: CloudUpload,
-    title: "Upload seguro",
-    description: "Seus arquivos vão para o Drive com criptografia, do jeito que a Meta e o Google exigem.",
+    icon: Clock3,
+    title: "Mais produtividade",
+    description: "Sua equipe foca no atendimento, não em pasta.",
   },
   {
-    icon: FolderKanban,
-    title: "Organização automática",
-    description: "Encontre documentos por conversa, tipo e data — sem criar pasta à mão.",
+    icon: TrendingDown,
+    title: "Menos erros e perdas",
+    description: "Arquivos com histórico e rastreio no Drive.",
   },
   {
-    icon: UserCheck,
-    title: "Autenticação de usuários",
-    description: "Sua equipe acessa só o que deve, com login próprio e rastreável.",
+    icon: FaComputer,
+    title: "Acesso de qualquer lugar",
+    description: "Seus arquivos disponíveis de onde você estiver.",
   },
   {
-    icon: KeyRound,
-    title: "OAuth com Google Drive",
-    description: "Você autoriza uma vez; depois disso o Drive é seu, não da plataforma.",
+    icon: FolderSearch,
+    title: "Histórico completo",
+    description: "Tudo encontrado rápido quando você precisa.",
   },
   {
-    icon: Gauge,
-    title: "Uso transparente",
-    description: "Veja quantas mensagens foram processadas e planeje custos com clareza.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Dashboard completo",
-    description: "Visão rápida do que entrou, para onde foi e como está o consumo do mês.",
-  },
-  {
-    icon: Shield,
-    title: "Conformidade LGPD",
-    description: "Menos risco na rotina: dados tratados com base na lei brasileira.",
+    icon: FaBuilding,
+    title: "Escalável para seu negócio.",
+    description: "Funciona pra você hoje e pra sua empresa amanhã.",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section id="funcionalidades" className="py-20 md:py-28">
-      <div className="container">
+    <section id="funcionalidades" className="bg-muted/30 py-16 md:py-24">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              O que muda no seu dia a dia
+              Quanto você perde hoje sem automação?
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Menos retrabalho, mais tempo com cliente — com a mesma stack que você já usa
-            </p>
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="mx-auto mt-16 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <StaggerItem key={feature.title}>
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="group h-full rounded-xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                  <feature.icon className="h-6 w-6 text-primary" />
+        <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_1fr]">
+          <ScrollReveal delay={0.12}>
+            <div className="rounded-xl border border-border bg-background p-7 shadow-md">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-destructive/10">
+                <TrendingDown
+                  className="h-5 w-5 text-destructive"
+                  aria-hidden
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">
+                3 horas por mês organizando arquivo na mão
+              </h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {" "}
+                = tempo perdido e dinheiro jogado fora.
+              </h3>
+              <p className="mt-3 text-muted-foreground">
+                Se sua hora de trabalho custa{" "}
+                <strong className="text-foreground">R$100 </strong>{" "}
+                significa:
+              </p>
+              <hr className="my-4" />
+              <h3 className="text-xl font-semibold text-muted-foreground">
+                <strong className="text-primary">R$ 300+ </strong>por mês em
+                tempo perdido e{" "}
+                <strong className="">dinheiro jogado fora.</strong>
+              </h3>
+              <p>R$3.600 por ano que poderia ser usado para outras coisas.</p>
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                O Swiftwapdrive elimina essa rotina manual e devolve esse tempo
+                para atendimento e venda.
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.18}>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl border border-border bg-background p-5 shadow-sm"
+                >
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <feature.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="mb-2 font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
