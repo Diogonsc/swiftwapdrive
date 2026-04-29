@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import notebook from "../../../public/notebook.png";
 import smartphone from "../../../public/phone.png";
+import { FaCheck } from "react-icons/fa6";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -43,8 +44,18 @@ const HeroSection = () => {
               transition={{ duration: 0.55, delay: 0.12 }}
               className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg"
             >
-              Receba fotos, vídeos, áudios e documentos como sempre. O Swiftwapdrive organiza tudo
+              Receba fotos, vídeos, áudios e documentos como sempre.
+              <br />
+              O Swiftwapdrive organiza tudo
               automaticamente no seu Google Drive.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.15 }}
+              className="mt-3 text-sm text-muted-foreground sm:text-base"
+            >
+              Se você usa WhatsApp para trabalhar com clientes, isso vai mudar seu dia a dia.
             </motion.p>
 
             <motion.ul
@@ -54,9 +65,9 @@ const HeroSection = () => {
               className="mt-6 space-y-2.5"
             >
               {[
-                "Economize até 3 horas por mês",
-                "Nunca mais perca arquivos",
-                "Tudo organizado e seguro",
+                "Nunca mais precisar pedir arquivo de novo",
+                "Pare de perder tempo procurando conversa",
+                "Tudo salvo automaticamente no Google Drive",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm font-medium text-foreground sm:text-base">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
@@ -79,6 +90,14 @@ const HeroSection = () => {
                 Ver como funciona
               </Button>
             </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.27 }}
+              className="mt-3 text-xs text-muted-foreground sm:text-sm"
+            >
+              Leva menos de 2 minutos para começar.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -86,9 +105,18 @@ const HeroSection = () => {
               transition={{ duration: 0.55, delay: 0.3 }}
               className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground sm:text-sm"
             >
-              <span>Sem instalação</span>
-              <span>Configuração em minutos</span>
-              <span>Funciona com WhatsApp oficial</span>
+              <span className="flex items-center gap-2">
+                <FaCheck className="h-4 w-4 text-primary" />
+                Sem instalação
+              </span>
+              <span className="flex items-center gap-2">
+                <FaCheck className="h-4 w-4 text-primary" />
+                Configuração em minutos
+              </span>
+              <span className="flex items-center gap-2">
+                <FaCheck className="h-4 w-4 text-primary" />
+                Funciona com WhatsApp Business
+              </span>
             </motion.div>
           </div>
 

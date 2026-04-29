@@ -1,4 +1,5 @@
-import { BadgeCheck, CheckCircle2, Lock, MessageSquare } from "lucide-react";
+import { BadgeCheck, CheckCircle2, Lock } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
 const WhatsAppUsageSection = () => {
@@ -10,11 +11,11 @@ const WhatsAppUsageSection = () => {
             <div className="grid items-center gap-6 rounded-xl bg-primary px-6 py-8 md:grid-cols-[1.3fr_0.7fr] md:px-8">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                  100% integrado à API oficial do WhatsApp (Meta)
+                  Integração segura com WhatsApp via Twilio
                 </h2>
                 <p className="mt-3 text-base text-primary-foreground/90 sm:text-lg">
-                  Integração oficial, criptografia e dados protegidos para sua operação funcionar com
-                  segurança todos os dias.
+                  Tecnologia Twilio, criptografia ponta a ponta e dados protegidos para sua operação
+                  funcionar com segurança todos os dias.
                 </p>
 
                 <div className="mt-6 space-y-2.5">
@@ -34,16 +35,16 @@ const WhatsAppUsageSection = () => {
               <div className="rounded-xl border border-primary-foreground/20 bg-primary-foreground p-5 text-foreground shadow-md">
                 <div className="space-y-4 text-sm">
                   <div className="flex items-center gap-2 font-semibold">
-                    <MessageSquare className="h-4 w-4 text-primary" />
-                    WhatsApp Business API
+                    <FaWhatsapp className="h-4 w-4 text-primary" />
+                    WhatsApp Business
                   </div>
                   <div className="flex items-center gap-2 font-semibold">
                     <BadgeCheck className="h-4 w-4 text-primary" />
-                    Meta
+                    Twilio
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <Lock className="h-3.5 w-3.5 text-primary" />
-                    Seguro • Confiável • Oficial
+                    Seguro • Confiável • Criptografado
                   </div>
                 </div>
               </div>
