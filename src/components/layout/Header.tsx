@@ -67,7 +67,7 @@ const Header = () => {
 
         <div className="hidden md:flex">
           <Button onClick={() => scrollToSection("planos")}>
-            Começar grátis
+            Começar agora
           </Button>
         </div>
 
@@ -123,7 +123,7 @@ const Header = () => {
               onClick={() => scrollToSection("planos")}
               className="w-full"
             >
-              Começar grátis
+              Começar agora
             </Button>
           </nav>
         </div>

@@ -1,5 +1,4 @@
 import {
-  MessageCircle,
   Cloud,
   ShieldCheck,
   Zap,
@@ -12,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
@@ -26,8 +26,8 @@ const PLAN = {
   extraPerMedia: "0,25",
 } as const;
 
-const INCLUDED_FEATURES: { label: string; icon: typeof MessageCircle }[] = [
-  { label: "1 número WhatsApp conectado", icon: MessageCircle },
+const INCLUDED_FEATURES: { label: string; icon: typeof FaWhatsapp }[] = [
+  { label: "1 número WhatsApp conectado", icon: FaWhatsapp },
   { label: "1 Google Drive conectado", icon: Cloud },
   { label: "200 mídias/mês inclusas (foto, vídeo, áudio e documento)", icon: MessagesSquare },
   { label: "Organização automática por remetente e data", icon: FolderKanban },
@@ -37,7 +37,7 @@ const INCLUDED_FEATURES: { label: string; icon: typeof MessageCircle }[] = [
 ];
 
 const HIGHLIGHT_ICONS = [
-  { icon: MessageCircle, label: "WhatsApp" },
+  { icon: FaWhatsapp, label: "WhatsApp" },
   { icon: Cloud, label: "Drive" },
   { icon: ShieldCheck, label: "Segurança" },
   { icon: Zap, label: "Automação" },
@@ -96,6 +96,9 @@ const PricingSection = () => {
                 </span>
                 <span className="text-lg font-medium text-muted-foreground">{PLAN.period}</span>
               </div>
+              <p className="mt-2 text-center text-sm text-muted-foreground">
+                Menos de R$0,50 por arquivo organizado automaticamente
+              </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 Inclui até {PLAN.includedMedias} mídias no mês (foto, vídeo, áudio ou documento)
               </p>
@@ -167,11 +170,14 @@ const PricingSection = () => {
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto sm:min-w-[200px]" asChild>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" aria-hidden />
+                  <FaWhatsapp className="h-4 w-4" aria-hidden />
                   Tirar dúvida no WhatsApp
                 </a>
               </Button>
             </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground sm:text-sm">
+              Comece agora — sem complicação.
+            </p>
           </div>
         </ScrollReveal>
 

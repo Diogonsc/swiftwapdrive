@@ -13,16 +13,16 @@ const AboutSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="mx-auto mt-10 max-w-5xl">
+        <div className="mx-auto mt-10 max-w-6xl">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-xl border border-border bg-background p-7 shadow-md">
               <ScrollReveal delay={0.1}>
                 <ul className="space-y-5">
                   {[
                     "Fim da bagunça no WhatsApp",
-                    "Mais tempo para o que importa",
-                    "Segurança e tranquilidade",
-                    "Acesso rápido e fácil",
+                    "Você encontra qualquer arquivo em segundos",
+                    "Tudo salvo automaticamente, sem precisar fazer nada",
+                    "Mais tempo para atender seus clientes",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">

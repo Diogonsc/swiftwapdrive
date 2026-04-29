@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, MessageCircle, Send, Loader2 } from "lucide-react";
+import { Mail, Send, Loader2 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -119,7 +120,7 @@ const ContactSection = () => {
                   className="group flex items-center gap-4 rounded-xl border border-border bg-background p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">
-                    <MessageCircle className="h-6 w-6 text-primary" />
+                    <FaWhatsapp className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">WhatsApp</h3>
@@ -213,7 +214,7 @@ const ContactSection = () => {
                     ) : (
                       <>
                         <Send className="h-4 w-4" />
-                        Quero organizar meus arquivos agora
+                        Quero parar de perder arquivos agora
                       </>
                     )}
                   </Button>
