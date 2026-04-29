@@ -14,16 +14,16 @@ const steps = [
   {
     number: "02",
     icon: Cpu,
-    title: "Processamento via API",
+    title: "Processamento via API oficial",
     description:
-      "Nossa plataforma recebe e processa o arquivo automaticamente de forma segura e criptografada.",
+      "A API oficial do WhatsApp Business, integrada via Twilio, processa o evento de recebimento de forma segura.",
   },
   {
     number: "03",
     icon: Download,
     title: "Download seguro",
     description:
-      "O arquivo é baixado com segurança e armazenado temporariamente de forma criptografada para processamento.",
+      "O arquivo é baixado com segurança através da infraestrutura oficial do WhatsApp, criptografado de ponta a ponta.",
   },
   {
     number: "04",

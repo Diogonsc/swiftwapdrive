@@ -11,11 +11,11 @@ const WhatsAppUsageSection = () => {
             <div className="grid items-center gap-6 rounded-xl bg-primary px-6 py-8 md:grid-cols-[1.3fr_0.7fr] md:px-8">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                  Integração segura com WhatsApp via Twilio
+                  100% integrado à API oficial do WhatsApp via Twilio
                 </h2>
                 <p className="mt-3 text-base text-primary-foreground/90 sm:text-lg">
-                  Tecnologia Twilio, criptografia ponta a ponta e dados protegidos para sua operação
-                  funcionar com segurança todos os dias.
+                  Integração oficial via Twilio, parceiro certificado Meta. Criptografia ponta
+                  a ponta e dados protegidos para sua operação funcionar com segurança todos os dias.
                 </p>
 
                 <div className="mt-6 space-y-2.5">
@@ -36,15 +36,15 @@ const WhatsAppUsageSection = () => {
                 <div className="space-y-4 text-sm">
                   <div className="flex items-center gap-2 font-semibold">
                     <FaWhatsapp className="h-4 w-4 text-primary" />
-                    WhatsApp Business
+                    WhatsApp Business API
                   </div>
                   <div className="flex items-center gap-2 font-semibold">
                     <BadgeCheck className="h-4 w-4 text-primary" />
-                    Twilio
+                    Twilio — Parceiro Meta
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <Lock className="h-3.5 w-3.5 text-primary" />
-                    Seguro • Confiável • Criptografado
+                    Seguro • Oficial • Criptografado
                   </div>
                 </div>
               </div>

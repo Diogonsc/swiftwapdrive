@@ -115,7 +115,7 @@ const HeroSection = () => {
               </span>
               <span className="flex items-center gap-2">
                 <FaCheck className="h-4 w-4 text-primary" />
-                Funciona com WhatsApp Business
+                API oficial do WhatsApp
               </span>
             </motion.div>
           </div>
