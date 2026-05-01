@@ -11,7 +11,7 @@ const Footer = () => {
                 <img
                   src="/logo.png"
                   alt="SwiftWapDrive"
-                  className="h-10 w-10 rounded-lg text-primary-foreground"
+                  className="h-6 w-6 rounded-lg text-primary-foreground"
                 />
               </div>
               <span className="text-xl font-semibold text-primary-foreground">SwiftWapDrive</span>

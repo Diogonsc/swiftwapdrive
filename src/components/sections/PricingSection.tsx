@@ -11,7 +11,7 @@ const PLANS = [
   {
     id: "starter",
     name: "Plano Starter",
-    price: 49,
+    price: 59,
     fileLimit: 80,
     popular: false,
     features: [
@@ -36,7 +36,7 @@ const PLANS = [
   {
     id: "scale",
     name: "Plano Scale",
-    price: 197,
+    price: 247,
     fileLimit: 600,
     popular: false,
     features: [

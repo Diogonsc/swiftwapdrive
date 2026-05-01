@@ -40,7 +40,7 @@ const WhatsAppUsageSection = () => {
                   </div>
                   <div className="flex items-center gap-2 font-semibold">
                     <BadgeCheck className="h-4 w-4 text-primary" />
-                    Integração oficial
+                    Integração oficial via (Twilio)
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <Lock className="h-3.5 w-3.5 text-primary" />
