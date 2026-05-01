@@ -10,15 +10,15 @@ const Footer = () => {
               <div className="flex items-center justify-center rounded-lg bg-white p-2">
                 <img
                   src="/logo.png"
-                  alt="Swiftwapdrive"
+                  alt="SwiftWapDrive"
                   className="h-10 w-10 rounded-lg text-primary-foreground"
                 />
               </div>
-              <span className="text-xl font-semibold text-primary-foreground">Swiftwapdrive</span>
+              <span className="text-xl font-semibold text-primary-foreground">SwiftWapDrive</span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-primary-foreground">
-              Automação inteligente de arquivos via WhatsApp integrada ao Google Drive. 
-              Simplifique sua rotina com tecnologia segura e confiável.
+              Arquivos que chegam no WhatsApp vão sozinhos para o seu Google Drive — organizados, sem
+              trabalho manual.
             </p>
           </div>
 
@@ -88,9 +88,9 @@ const Footer = () => {
         {/* Bottom bar - Required info */}
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-sm font-medium text-primary-foreground">Swiftwapdrive</p>
+            <p className="text-sm font-medium text-primary-foreground">SwiftWapDrive</p>
             <p className="mt-4 text-xs text-primary-foreground">
-              © {new Date().getFullYear()} Swiftwapdrive. Todos os direitos reservados.
+              © {new Date().getFullYear()} SwiftWapDrive. Todos os direitos reservados.
             </p>
           </div>
         </div>

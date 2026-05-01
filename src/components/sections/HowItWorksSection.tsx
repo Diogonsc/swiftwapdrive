@@ -1,4 +1,4 @@
-import { Cpu, Download, CloudUpload, BarChart3 } from "lucide-react";
+import { FolderTree, MessageCircle, CloudUpload } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -7,37 +7,26 @@ const steps = [
   {
     number: "01",
     icon: FaWhatsapp,
-    title: "Envio voluntário",
-    description:
-      "O usuário envia uma mídia voluntariamente ao WhatsApp da sua empresa.",
+    title: "Conecte seu WhatsApp",
+    description: "Associe o número da sua operação em poucos minutos, com o fluxo guiado.",
   },
   {
     number: "02",
-    icon: Cpu,
-    title: "Processamento via API oficial",
-    description:
-      "A API oficial do WhatsApp Business, integrada via Twilio, processa o evento de recebimento de forma segura.",
+    icon: FolderTree,
+    title: "Escolha como organizar seus arquivos (pastas e regras)",
+    description: "Por cliente, data ou tipo — o sistema aplica sozinho.",
   },
   {
     number: "03",
-    icon: Download,
-    title: "Download seguro",
-    description:
-      "O arquivo é baixado com segurança através da infraestrutura oficial do WhatsApp, criptografado de ponta a ponta.",
+    icon: MessageCircle,
+    title: "Continue usando normalmente",
+    description: "Clientes e equipe enviam arquivos como sempre. Você não muda o hábito de ninguém.",
   },
   {
     number: "04",
     icon: CloudUpload,
-    title: "Upload para Google Drive",
-    description:
-      "O conteúdo é salvo automaticamente no Google Drive do usuário, organizado por tipo e data.",
-  },
-  {
-    number: "05",
-    icon: BarChart3,
-    title: "Contabilização",
-    description:
-      "Cada mensagem processada entra no seu painel: você sabe exatamente o que consumiu do pacote mensal e do excedente.",
+    title: "Seus arquivos são enviados automaticamente para o Google Drive",
+    description: "Cada envio vira arquivo no Drive, já no lugar certo. Zero trabalho manual na rotina.",
   },
 ];
 
@@ -47,18 +36,15 @@ const HowItWorksSection = () => {
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Como funciona
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Como funciona</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Um processo simples, automatizado e seguro em 5 etapas
+              Quatro passos simples — o resto é automação no seu dia a dia
             </p>
           </div>
         </ScrollReveal>
 
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-8 top-0 hidden h-full w-px bg-border md:block" />
 
             <div className="space-y-8">
@@ -69,12 +55,10 @@ const HowItWorksSection = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                     className="relative flex gap-6"
                   >
-                    {/* Step indicator */}
                     <div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-border bg-background shadow-md">
                       <step.icon className="h-7 w-7 text-primary" />
                     </div>
 
-                    {/* Content */}
                     <div className="flex-1 rounded-xl border border-border bg-background p-6 shadow-sm transition-shadow hover:shadow-md">
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-bold text-primary">{step.number}</span>

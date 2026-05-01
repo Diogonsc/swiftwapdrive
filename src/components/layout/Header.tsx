@@ -21,12 +21,12 @@ const Header = () => {
           <div className="flex items-center justify-center rounded-lg">
             <img
               src="/logo.png"
-              alt="Swiftwapdrive"
+              alt="SwiftWapDrive"
               className="h-10 w-10 rounded-lg text-primary-foreground"
             />
           </div>
           <span className="text-xl font-semibold text-foreground">
-            Swiftwapdrive
+            SwiftWapDrive
           </span>
         </Link>
 
@@ -42,7 +42,7 @@ const Header = () => {
             onClick={() => scrollToSection("sobre")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Recursos
+            Benefícios
           </button>
           <button
             onClick={() => scrollToSection("publico")}
@@ -57,10 +57,10 @@ const Header = () => {
             Preço
           </button>
           <button
-            onClick={() => scrollToSection("contato")}
+            onClick={() => scrollToSection("faq")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Contato
+            FAQ
           </button>
         </nav>
 
@@ -98,7 +98,7 @@ const Header = () => {
               onClick={() => scrollToSection("sobre")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Recursos
+              Benefícios
             </button>
             <button
               onClick={() => scrollToSection("publico")}
@@ -113,10 +113,10 @@ const Header = () => {
               Preço
             </button>
             <button
-              onClick={() => scrollToSection("contato")}
+              onClick={() => scrollToSection("faq")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Contato
+              FAQ
             </button>
             <Button
               onClick={() => scrollToSection("planos")}

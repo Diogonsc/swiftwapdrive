@@ -1,38 +1,33 @@
-import { Building2, Briefcase, GraduationCap, HeartPulse, Home, UsersRound } from "lucide-react";
+import { Building2, Calculator, FileText, Home, Scale } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
 import { motion } from "framer-motion";
 
 const audiences = [
   {
-    icon: Briefcase,
-    title: "Profissionais liberais",
-    description: "Quem atende clientes e recebe arquivos diariamente.",
+    icon: Scale,
+    title: "Advogados",
+    description: "Contratos e peças chegando o tempo todo — sem perder no chat.",
   },
   {
-    icon: HeartPulse,
-    title: "Clínicas e saúde",
-    description: "Fluxo intenso de exames, documentos e imagens.",
-  },
-  {
-    icon: Building2,
-    title: "Empresas e times",
-    description: "Equipes com alto volume de atendimento no WhatsApp.",
+    icon: Calculator,
+    title: "Contadores",
+    description: "Documentos e comprovantes no fluxo, organizados no Drive.",
   },
   {
     icon: Home,
-    title: "Imobiliárias",
-    description: "Fotos, contratos e comprovantes em uma rotina contínua.",
+    title: "Corretores",
+    description: "Arquivos de imóveis e clientes, cada um na pasta certa.",
   },
   {
-    icon: GraduationCap,
-    title: "Escolas",
-    description: "Documentos e anexos para gestão e comunicação.",
+    icon: Building2,
+    title: "Equipes administrativas",
+    description: "Menos trabalho manual e mais previsibilidade no arquivo.",
   },
   {
-    icon: UsersRound,
-    title: "Outros segmentos",
-    description: "Qualquer operação que recebe mídia com frequência.",
+    icon: FileText,
+    title: "Profissionais que lidam com documentos",
+    description: "Automação para quem vive recebendo PDF e anexos pelo WhatsApp.",
   },
 ];
 
@@ -43,23 +38,21 @@ const TargetAudienceSection = () => {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ideal para quem recebe arquivo todo dia pelo WhatsApp
+              Ideal para quem recebe arquivos todos os dias pelo WhatsApp
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              O problema é o mesmo em vários setores: mídia chegando rápido, celular lotando e
-              alguém tendo que “arrumar isso depois”. Se isso soa familiar, você está no lugar
-              certo.
+              Se a sua rotina depende de arquivo no WhatsApp, automação devolve tempo e reduz erro.
             </p>
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <StaggerContainer className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {audiences.map((audience) => (
             <StaggerItem key={audience.title}>
               <motion.div
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex h-full flex-col items-center text-center gap-3 rounded-xl border border-border bg-background p-5 shadow-sm"
+                className="flex h-full flex-col items-center gap-3 rounded-xl border border-border bg-background p-5 text-center shadow-sm"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <audience.icon className="h-6 w-6 text-primary" />

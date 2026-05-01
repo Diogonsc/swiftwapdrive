@@ -8,7 +8,8 @@ import SocialProofSection from "@/components/sections/SocialProofSection";
 import WhatsAppUsageSection from "@/components/sections/WhatsAppUsageSection";
 import TargetAudienceSection from "@/components/sections/TargetAudienceSection";
 import PricingSection from "@/components/sections/PricingSection";
-import ContactSection from "@/components/sections/ContactSection";
+import FaqSection from "@/components/sections/FaqSection";
+import FinalCtaSection from "@/components/sections/FinalCtaSection";
 
 const Index = () => {
   return (
@@ -23,7 +24,8 @@ const Index = () => {
         <WhatsAppUsageSection />
         <TargetAudienceSection />
         <PricingSection />
-        <ContactSection />
+        <FaqSection />
+        <FinalCtaSection />
       </main>
       <Footer />
     </div>

@@ -24,7 +24,7 @@ const HeroSection = () => {
               transition={{ duration: 0.45 }}
               className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground"
             >
-              Organize automaticamente no Google Drive
+              Automação WhatsApp → Google Drive
             </motion.p>
 
             <motion.h1
@@ -33,27 +33,20 @@ const HeroSection = () => {
               transition={{ duration: 0.55, delay: 0.05 }}
               className="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-[3.2rem]"
             >
-              Chega de perder arquivo no WhatsApp e <span className="text-primary">refazer trabalho.</span>
+              Receba arquivos no WhatsApp e salve tudo{" "}
+              <span className="text-primary">automaticamente no seu Google Drive</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.12 }}
-              className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg"
+              className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Receba fotos, vídeos, áudios e documentos como sempre.
-              <br />
-              O Swiftwapdrive organiza tudo
-              automaticamente no seu Google Drive.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.15 }}
-              className="mt-3 text-sm text-muted-foreground sm:text-base"
-            >
-              Se você usa WhatsApp para trabalhar com clientes, isso vai mudar seu dia a dia.
+              Sem baixar, sem organizar manualmente, sem perder tempo.
+              <br/> 
+              Cada arquivo vai direto para a
+              pasta certa — sozinho.
             </motion.p>
 
             <motion.ul
@@ -63,9 +56,9 @@ const HeroSection = () => {
               className="mt-6 space-y-2.5"
             >
               {[
-                "Nunca mais precisar pedir arquivo de novo",
-                "Pare de perder tempo procurando conversa",
-                "Tudo salvo automaticamente no Google Drive",
+                "Recebeu no WhatsApp → salvou no Drive automaticamente",
+                "Arquivos organizados por cliente, data e tipo",
+                "Pare de perder tempo baixando e renomeando arquivos",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm font-medium text-foreground sm:text-base">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
@@ -81,7 +74,7 @@ const HeroSection = () => {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <Button size="lg" onClick={() => scrollToSection("planos")} className="gap-2 shadow-primary">
-                Começar agora
+                Começar a organizar meus arquivos
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" onClick={() => scrollToSection("como-funciona")}>

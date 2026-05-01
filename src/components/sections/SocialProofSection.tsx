@@ -6,17 +6,17 @@ const testimonials = [
   {
     name: "Adriana S.",
     role: "Atendimento",
-    quote: "Nunca mais perdi arquivos de clientes no meio do WhatsApp.",
+    quote: "Parei de perder tempo baixando coisa no celular — tudo vai direto pro Drive.",
   },
   {
     name: "Rafael T.",
     role: "Comercial",
-    quote: "Acabou a hora de ficar baixando foto e PDF no celular.",
+    quote: "A automação virou rotina: recebi no WhatsApp, já está organizado na pasta.",
   },
   {
     name: "Camila P.",
     role: "Coord. de Operações",
-    quote: "Histórico no Drive ficou claro para todo mundo. Muito mais rápido.",
+    quote: "Menos retrabalho e menos pedido de arquivo de novo para o cliente.",
   },
 ];
 
@@ -27,8 +27,11 @@ const SocialProofSection = () => {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Profissionais e equipes que recebem muito arquivo pelo WhatsApp
+              Quem automatizou a rotina ganhou tempo de volta
             </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Profissionais que recebem arquivos pelo WhatsApp todos os dias
+            </p>
           </div>
         </ScrollReveal>
 
@@ -60,11 +63,14 @@ const SocialProofSection = () => {
         <div className="mx-auto mt-8 grid max-w-5xl gap-3 text-center sm:grid-cols-2 lg:grid-cols-4">
           {[
             "+500 usuários",
-            "+50 mil arquivos organizados",
+            "+50 mil arquivos organizados automaticamente",
             "98% satisfação",
             "Suporte humano",
           ].map((item) => (
-            <div key={item} className="rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm font-semibold text-foreground">
+            <div
+              key={item}
+              className="rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm font-semibold text-foreground"
+            >
               {item}
             </div>
           ))}

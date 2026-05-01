@@ -1,57 +1,60 @@
-import {
-  Cloud,
-  ShieldCheck,
-  Zap,
-  Download,
-  FolderKanban,
-  MessagesSquare,
-  Timer,
-} from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { FaWhatsapp } from "react-icons/fa6";
+import { cn } from "@/lib/utils";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
-const PLAN = {
-  name: "Plano Essencial",
-  price: 97,
-  currency: "R$",
-  period: "/ mês",
-  description:
-    "Tudo o que você precisa para arquivos do WhatsApp irem direto ao Google Drive, com teto de gasto previsível.",
-  includedMedias: 200,
-  extraPerMedia: "0,25",
-} as const;
-
-const INCLUDED_FEATURES: { label: string; icon: typeof FaWhatsapp }[] = [
-  { label: "1 número WhatsApp conectado", icon: FaWhatsapp },
-  { label: "1 Google Drive conectado", icon: Cloud },
-  { label: "200 mídias/mês inclusas (foto, vídeo, áudio e documento)", icon: MessagesSquare },
-  { label: "Organização automática por remetente e data", icon: FolderKanban },
-  { label: "Transferência segura das mídias até o Drive", icon: Download },
-  { label: "Tratamento alinhado à LGPD", icon: ShieldCheck },
-  { label: "Suporte via WhatsApp", icon: Zap },
-];
-
-const HIGHLIGHT_ICONS = [
-  { icon: FaWhatsapp, label: "WhatsApp" },
-  { icon: Cloud, label: "Drive" },
-  { icon: ShieldCheck, label: "Segurança" },
-  { icon: Zap, label: "Automação" },
+const PLANS = [
+  {
+    id: "starter",
+    name: "Plano Starter",
+    price: 49,
+    fileLimit: 80,
+    popular: false,
+    features: [
+      "Até 80 arquivos automatizados por mês",
+      "Integração com Google Drive",
+      "Organização automática",
+    ],
+  },
+  {
+    id: "profissional",
+    name: "Plano Profissional",
+    price: 97,
+    fileLimit: 200,
+    popular: true,
+    features: [
+      "Até 200 arquivos automatizados por mês",
+      "Integração com Google Drive",
+      "Organização automática",
+      "Suporte",
+    ],
+  },
+  {
+    id: "scale",
+    name: "Plano Scale",
+    price: 197,
+    fileLimit: 600,
+    popular: false,
+    features: [
+      "Até 600 arquivos automatizados por mês",
+      "Integração com Google Drive",
+      "Organização automática",
+      "Prioridade no suporte",
+    ],
+  },
 ] as const;
 
 const PricingSection = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contato");
+  const scrollToFinalCta = () => {
+    const element = document.getElementById("cta-final");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  const costPerIncludedMedia = (PLAN.price / PLAN.includedMedias).toFixed(2).replace(".", ",");
 
   return (
     <section id="planos" className="py-16 md:py-24">
@@ -59,130 +62,92 @@ const PricingSection = () => {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Menos que uma hora do seu trabalho. Bem menos que perder arquivo.
+              Planos por volume de automação
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">Plano único com preço claro e previsível.</p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Você paga pelo que usa em arquivos enviados automaticamente para o Drive — previsível e
+              sem surpresa.
+            </p>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.15} className="mx-auto mt-14">
-          <div className="relative rounded-2xl border border-primary/25 bg-gradient-to-b from-primary/5 to-background p-8 shadow-lg shadow-primary/10 md:p-10">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <Badge className="px-3 py-1 text-xs font-semibold shadow-sm">Mais vendido</Badge>
-            </div>
+        <ScrollReveal delay={0.12} className="mx-auto mt-12 max-w-6xl">
+          <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
+            {PLANS.map((plan) => (
+              <div
+                key={plan.id}
+                className={cn(
+                  "relative flex flex-col rounded-2xl border bg-background p-6 shadow-sm transition-shadow md:p-8",
+                  plan.popular
+                    ? "border-primary shadow-lg shadow-primary/10 ring-2 ring-primary/20 lg:scale-[1.02] lg:py-9"
+                    : "border-border hover:shadow-md",
+                )}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge className="px-3 py-1 text-xs font-semibold shadow-sm">Mais popular</Badge>
+                  </div>
+                )}
 
-            <div className="mt-4 flex flex-wrap justify-center gap-3 sm:gap-4">
-              {HIGHLIGHT_ICONS.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs text-muted-foreground"
+                <div className={cn("text-center", plan.popular && "mt-2")}>
+                  <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
+                  <div className="mt-5 flex items-baseline justify-center gap-1">
+                    <span className="text-lg font-semibold text-muted-foreground">R$</span>
+                    <span className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+                      {plan.price}
+                    </span>
+                    <span className="text-base font-medium text-muted-foreground">/mês</span>
+                  </div>
+                </div>
+
+                <ul className="mt-8 flex-1 space-y-3.5">
+                  {plan.features.map((label) => (
+                    <li key={label} className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                        <Check className="h-3 w-3 text-primary" aria-hidden />
+                      </span>
+                      <span className="leading-snug">{label}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  size="lg"
+                  className="mt-8 w-full"
+                  variant={plan.popular ? "default" : "outline"}
+                  onClick={scrollToFinalCta}
                 >
-                  <Icon className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground">{PLAN.name}</h3>
-            </div>
-
-            <div className="mt-6 rounded-xl border border-border bg-background/60 px-6 py-8 text-center">
-              <p className="text-sm font-medium text-muted-foreground">Mensalidade fixa</p>
-              <div className="mt-2 flex items-baseline justify-center gap-1">
-                <span className="text-lg font-semibold text-muted-foreground">{PLAN.currency}</span>
-                <span className="text-5xl font-bold tracking-tight text-foreground md:text-6xl">
-                  {PLAN.price}
-                </span>
-                <span className="text-lg font-medium text-muted-foreground">{PLAN.period}</span>
+                  Começar agora
+                </Button>
               </div>
-              <p className="mt-2 text-center text-sm text-muted-foreground">
-                Menos de R$0,50 por arquivo organizado automaticamente
-              </p>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Inclui até {PLAN.includedMedias} mídias no mês (foto, vídeo, áudio ou documento)
-              </p>
-              <p className="mt-2 text-sm font-medium text-primary">
-                Na faixa inclusa: menos de R$ 0,50 por mídia — em média R$ {costPerIncludedMedia}{" "}
-                nas {PLAN.includedMedias} primeiras do mês.
-              </p>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Para comparar: costuma ser menos do que <strong className="text-foreground">uma hora</strong> de um
-                profissional ou assistente organizando na mão — só que vale o mês inteiro.
-              </p>
-            </div>
-
-            <div className="mt-8 rounded-xl border border-primary/15 bg-primary/5 px-5 py-6 text-center">
-              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                <Timer className="h-5 w-5 text-primary" aria-hidden />
-              </div>
-              <h4 className="text-lg font-semibold text-foreground">Tempo virando dinheiro</h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Quem recebe umas duzentas mídias por mês costuma gastar várias horas só baixando e
-                arrumando pasta. Aqui isso some do seu fluxo: o valor do plano troca retrabalho por
-                automação.
-              </p>
-            </div>
-
-            <p className="mt-8 text-center text-base leading-relaxed text-muted-foreground">
-              {PLAN.description}
-            </p>
-
-            <Separator className="my-8" />
-
-            <p className="mb-4 text-sm font-semibold text-foreground">Inclui</p>
-            <ul className="space-y-3.5">
-              {INCLUDED_FEATURES.map(({ label, icon: Icon }) => (
-                <li key={label} className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="h-4 w-4 text-primary" aria-hidden />
-                  </span>
-                  <span className="pt-1.5 text-sm leading-snug text-muted-foreground">{label}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Separator className="my-8" />
-
-            <div className="rounded-xl border-2 border-primary/30 bg-muted/40 p-6 md:p-7">
-              <div className="flex items-start gap-3">
-                <span className="text-2xl leading-none" aria-hidden>
-                  💡
-                </span>
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">Após 200 mídias no mês</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Você paga somente <strong>R$ {PLAN.extraPerMedia}</strong> por mídia adicional
-                    (foto, vídeo, áudio ou documento). O painel mostra o consumo em tempo real.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <p className="mt-6 text-center text-sm leading-relaxed text-muted-foreground">
-              Volume variou? Você paga a mais só no que excedeu — útil para quem tem pico em certas
-              semanas e mês tranquilo em outras.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <Button size="lg" className="w-full shadow-primary sm:w-auto sm:min-w-[200px]" onClick={scrollToContact}>
-                Começar agora
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto sm:min-w-[200px]" asChild>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp className="h-4 w-4" aria-hidden />
-                  Tirar dúvida no WhatsApp
-                </a>
-              </Button>
-            </div>
-            <p className="mt-3 text-center text-xs text-muted-foreground sm:text-sm">
-              Comece agora — sem complicação.
-            </p>
+            ))}
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.25}>
-          <p className="mt-10 text-center text-sm text-muted-foreground">Sem fidelidade • Sem cartão</p>
+        <ScrollReveal delay={0.2} className="mx-auto mt-10 max-w-2xl space-y-4 text-center">
+          <p className="text-base font-medium text-foreground">
+            Arquivos adicionais: R$0,25 por arquivo excedente
+          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            200 arquivos por mês equivale a cerca de 6–7 arquivos por dia — suficiente para a maioria dos
+            profissionais.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.22} className="mx-auto mt-10 flex max-w-xl flex-col gap-3 sm:flex-row sm:justify-center">
+          <Button size="lg" className="w-full shadow-primary sm:w-auto sm:min-w-[200px]" onClick={scrollToFinalCta}>
+            Falar com a equipe
+          </Button>
+          <Button size="lg" variant="outline" className="w-full sm:w-auto sm:min-w-[200px]" asChild>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="h-4 w-4" aria-hidden />
+              Tirar dúvida no WhatsApp
+            </a>
+          </Button>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.26}>
+          <p className="mt-8 text-center text-sm text-muted-foreground">Sem fidelidade • Sem cartão</p>
         </ScrollReveal>
       </div>
     </section>
