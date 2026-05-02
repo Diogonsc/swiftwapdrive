@@ -2,17 +2,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { FaWhatsapp } from "react-icons/fa6";
+import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
 const FinalCtaSection = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="cta-final"
@@ -28,9 +22,11 @@ const FinalCtaSection = () => {
               Pare de perder tempo com trabalho manual e deixe tudo automático.
             </p>
             <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-              <Button size="lg" className="gap-2 shadow-primary sm:min-w-[200px]" onClick={() => scrollToSection("planos")}>
-                Ver planos
-                <ArrowRight className="h-4 w-4" />
+              <Button size="lg" className="gap-2 shadow-primary sm:min-w-[200px]" asChild>
+                <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                  Ver planos
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="sm:min-w-[200px]" asChild>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">

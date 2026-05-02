@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,8 +66,10 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex">
-          <Button onClick={() => scrollToSection("planos")}>
-            Começar agora
+          <Button asChild>
+            <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+              Começar agora
+            </a>
           </Button>
         </div>
 
@@ -118,11 +121,10 @@ const Header = () => {
             >
               FAQ
             </button>
-            <Button
-              onClick={() => scrollToSection("planos")}
-              className="w-full"
-            >
-              Começar agora
+            <Button asChild className="w-full">
+              <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                Começar agora
+              </a>
             </Button>
           </nav>
         </div>

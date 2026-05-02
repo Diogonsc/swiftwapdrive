@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { FaWhatsapp } from "react-icons/fa6";
+import { appSignupUrlForPricingPlanId, externalAppLinkProps } from "@/lib/app-links";
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
@@ -115,9 +116,14 @@ const PricingSection = () => {
                   size="lg"
                   className="mt-8 w-full"
                   variant={plan.popular ? "default" : "outline"}
-                  onClick={scrollToFinalCta}
+                  asChild
                 >
-                  Começar agora
+                  <a
+                    href={appSignupUrlForPricingPlanId(plan.id)}
+                    {...externalAppLinkProps}
+                  >
+                    Começar agora
+                  </a>
                 </Button>
               </div>
             ))}

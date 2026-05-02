@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
+import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -73,9 +74,11 @@ const HeroSection = () => {
               transition={{ duration: 0.55, delay: 0.24 }}
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
-              <Button size="lg" onClick={() => scrollToSection("planos")} className="gap-2 shadow-primary">
-                Começar a organizar meus arquivos
-                <ArrowRight className="h-4 w-4" />
+              <Button size="lg" className="gap-2 shadow-primary" asChild>
+                <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                  Começar a organizar meus arquivos
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" onClick={() => scrollToSection("como-funciona")}>
                 Ver como funciona
