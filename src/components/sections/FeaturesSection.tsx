@@ -22,7 +22,7 @@ const pains = [
 
 const FeaturesSection = () => {
   return (
-    <section id="funcionalidades" className="bg-muted/30 py-16 md:py-24">
+    <section id="funcionalidades" className="py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
@@ -38,9 +38,9 @@ const FeaturesSection = () => {
               {pains.map((item) => (
                 <div
                   key={item.title}
-                  className="relative overflow-hidden rounded-xl border border-border bg-background p-5 shadow-sm transition-shadow hover:shadow-md"
+                  className="relative overflow-hidden rounded-xl border border-border bg-background p-5 shadow-card transition-shadow hover:shadow-lg"
                 >
-                  <div className="relative z-10 mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="relative z-10 mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <p className="relative z-10 text-sm font-medium leading-relaxed text-foreground sm:text-base">

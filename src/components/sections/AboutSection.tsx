@@ -1,86 +1,92 @@
-import { CheckCircle2, FileAudio, FileImage, FileText, FileVideo } from "lucide-react";
+import {
+  Bot,
+  Clock3,
+  FolderTree,
+  HardDriveDownload,
+  Search,
+  Shield,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
+import { motion } from "framer-motion";
+
+const benefits = [
+  {
+    icon: FolderTree,
+    title: "Organização automática",
+    description: "Arquivos no lugar certo, sem trabalho manual.",
+  },
+  {
+    icon: Clock3,
+    title: "Economia de tempo",
+    description: "Pare de baixar e renomear arquivos todos os dias.",
+  },
+  {
+    icon: HardDriveDownload,
+    title: "Backup inteligente",
+    description: "Cópia automática no Google Drive a cada envio.",
+  },
+  {
+    icon: Shield,
+    title: "Segurança",
+    description: "API oficial do WhatsApp e dados alinhados à LGPD.",
+  },
+  {
+    icon: Zap,
+    title: "API Oficial",
+    description: "Integração estável, sem gambiarra.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Escalabilidade",
+    description: "Cresce com o volume da sua operação.",
+  },
+  {
+    icon: Search,
+    title: "Busca rápida",
+    description: "Encontre tudo organizado por cliente, data e tipo.",
+  },
+  {
+    icon: Bot,
+    title: "Automação",
+    description: "Do WhatsApp ao Drive em segundos, sem intervenção.",
+  },
+];
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="bg-muted/30 py-16 md:py-24">
+    <section id="sobre" className="section-alt py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               O que você ganha com o SwiftWapDrive
             </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Automação completa para quem recebe arquivos pelo WhatsApp todos os dias
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="mx-auto mt-10 max-w-6xl">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-xl border border-border bg-background p-7 shadow-md">
-              <ScrollReveal delay={0.1}>
-                <ul className="space-y-5">
-                  {[
-                    "Economia de tempo todos os dias",
-                    "Fim do trabalho manual com arquivos",
-                    "Organização automática no Google Drive",
-                    "Redução de erros e arquivos perdidos",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                        <CheckCircle2 className="h-5 w-5 text-primary" />
-                      </div>
-                      <span className="text-base font-medium text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </ScrollReveal>
-            </div>
-
-            <ScrollReveal delay={0.2} direction="right">
-              <div className="rounded-xl border border-border bg-background p-7 shadow-md">
-                <h3 className="mb-6 text-xl font-semibold text-foreground">
-                  Arquivos organizados automaticamente
-                </h3>
-                <p className="mb-6 text-sm text-muted-foreground">
-                  O que chega no WhatsApp segue para o Drive no fluxo certo — sem você parar o que está
-                  fazendo.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3 rounded-lg bg-background p-4 shadow-sm">
-                    <FileImage className="h-8 w-8 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">Imagens</p>
-                      <p className="text-xs text-muted-foreground">Na pasta certa</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 rounded-lg bg-background p-4 shadow-sm">
-                    <FileVideo className="h-8 w-8 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">Vídeos</p>
-                      <p className="text-xs text-muted-foreground">Sem download manual</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 rounded-lg bg-background p-4 shadow-sm">
-                    <FileAudio className="h-8 w-8 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">Áudios</p>
-                      <p className="text-xs text-muted-foreground">Automático</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 rounded-lg bg-background p-4 shadow-sm">
-                    <FileText className="h-8 w-8 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">Documentos</p>
-                      <p className="text-xs text-muted-foreground">Prontos no Drive</p>
-                    </div>
-                  </div>
+        <StaggerContainer className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {benefits.map((benefit) => (
+            <StaggerItem key={benefit.title}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex h-full flex-col rounded-xl border border-border bg-background p-5 shadow-card transition-shadow hover:shadow-lg"
+              >
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15">
+                  <benefit.icon className="h-5 w-5 text-primary" />
                 </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
+                <h3 className="font-semibold text-foreground">{benefit.title}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">{benefit.description}</p>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
     </section>
   );

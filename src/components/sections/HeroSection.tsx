@@ -15,6 +15,7 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden gradient-subtle">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(174_80%_46%_/_0.12),transparent)]" />
 
       <div className="relative mx-auto w-full max-w-[1280px] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
@@ -45,9 +46,8 @@ const HeroSection = () => {
               className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
               Sem baixar, sem organizar manualmente, sem perder tempo.
-              <br/> 
-              Cada arquivo vai direto para a
-              pasta certa — sozinho.
+              <br />
+              Cada arquivo vai direto para a pasta certa — sozinho.
             </motion.p>
 
             <motion.ul

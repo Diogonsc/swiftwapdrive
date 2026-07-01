@@ -20,7 +20,7 @@ const usageScenarios = [
 
 const PlanGuidanceSection = () => {
   return (
-    <section id="guia-de-planos" className="bg-muted/30 py-16 md:py-24">
+    <section id="guia-de-planos" className="section-alt py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
@@ -37,7 +37,7 @@ const PlanGuidanceSection = () => {
         <div className="mx-auto mt-12 grid max-w-6xl gap-5 md:grid-cols-3">
           {usageScenarios.map((scenario, index) => (
             <ScrollReveal key={scenario.title} delay={index * 0.08}>
-              <article className="relative h-full overflow-hidden rounded-xl border border-border bg-background p-6 shadow-sm transition-shadow hover:shadow-md">
+              <article className="relative h-full overflow-hidden rounded-xl border border-border bg-background p-6 shadow-card transition-shadow hover:shadow-lg">
                 <div className="inline-flex h-2.5 w-2.5 rounded-full bg-primary/70" aria-hidden />
                 <h3 className="mt-3 text-xl font-semibold text-foreground">{scenario.title}</h3>
                 <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground sm:text-base">

@@ -1,6 +1,16 @@
-import { Building2, Calculator, FileText, Home, Scale } from "lucide-react";
+import {
+  Briefcase,
+  Calculator,
+  GraduationCap,
+  Home,
+  Landmark,
+  Palette,
+  Scale,
+  Users,
+} from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerAnimation";
+import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 const audiences = [
@@ -20,14 +30,29 @@ const audiences = [
     description: "Arquivos de imóveis e clientes, cada um na pasta certa.",
   },
   {
-    icon: Building2,
-    title: "Equipes administrativas",
+    icon: Briefcase,
+    title: "Administrativo",
     description: "Menos trabalho manual e mais previsibilidade no arquivo.",
   },
   {
-    icon: FileText,
-    title: "Profissionais que lidam com documentos",
-    description: "Automação para quem vive recebendo PDF e anexos pelo WhatsApp.",
+    icon: GraduationCap,
+    title: "Educação",
+    description: "Materiais, trabalhos e documentos de alunos organizados automaticamente.",
+  },
+  {
+    icon: Palette,
+    title: "Artistas / Criadores",
+    description: "Arquivos de clientes e projetos salvos sem perder no chat.",
+  },
+  {
+    icon: Users,
+    title: "RH",
+    description: "Currículos, contratos e documentos de colaboradores no lugar certo.",
+  },
+  {
+    icon: Landmark,
+    title: "Financeiro",
+    description: "Comprovantes e notas fiscais organizados sem retrabalho.",
   },
 ];
 
@@ -37,6 +62,9 @@ const TargetAudienceSection = () => {
       <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-4 border-primary/20 bg-primary/10 text-primary">
+              Para quem é
+            </Badge>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Ideal para quem recebe arquivos todos os dias pelo WhatsApp
             </h2>
@@ -46,19 +74,20 @@ const TargetAudienceSection = () => {
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <StaggerContainer className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((audience) => (
             <StaggerItem key={audience.title}>
               <motion.div
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex h-full flex-col items-center gap-3 rounded-xl border border-border bg-background p-5 text-center shadow-sm"
+                className="relative flex h-full flex-col items-center gap-3 overflow-hidden rounded-xl border border-border bg-background p-5 text-center shadow-card transition-shadow hover:shadow-lg"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/15">
                   <audience.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground">{audience.title}</h3>
-                <p className="text-xs text-muted-foreground">{audience.description}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{audience.description}</p>
+                <div className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-primary/5" />
               </motion.div>
             </StaggerItem>
           ))}

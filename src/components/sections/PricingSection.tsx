@@ -78,10 +78,10 @@ const PricingSection = () => {
               <div
                 key={plan.id}
                 className={cn(
-                  "relative flex flex-col rounded-2xl border bg-background p-6 shadow-sm transition-shadow md:p-8",
+                  "relative flex flex-col rounded-2xl border bg-background p-6 shadow-card transition-shadow md:p-8",
                   plan.popular
                     ? "border-primary shadow-lg shadow-primary/10 ring-2 ring-primary/20 lg:scale-[1.02] lg:py-9"
-                    : "border-border hover:shadow-md",
+                    : "border-border hover:shadow-lg",
                 )}
               >
                 {plan.popular && (
