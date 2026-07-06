@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { FaWhatsapp } from "react-icons/fa6";
 import { appSignupUrlForPricingPlanId, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
@@ -51,6 +52,13 @@ const PLANS = [
 
 const PricingSection = () => {
   const scrollToFinalCta = () => {
+    trackButtonClick({
+      button_text: "Falar com a equipe",
+      button_location: "pricing",
+      button_action: "scroll",
+      nav_section: "cta-final",
+    });
+
     const element = document.getElementById("cta-final");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -121,6 +129,14 @@ const PricingSection = () => {
                   <a
                     href={appSignupUrlForPricingPlanId(plan.id)}
                     {...externalAppLinkProps}
+                    onClick={() =>
+                      trackButtonClick({
+                        button_text: "Começar agora",
+                        button_location: "pricing",
+                        button_action: "signup",
+                        plan_id: plan.id,
+                      })
+                    }
                   >
                     Começar agora
                   </a>
@@ -145,7 +161,18 @@ const PricingSection = () => {
             Falar com a equipe
           </Button>
           <Button size="lg" variant="outline" className="w-full sm:w-auto sm:min-w-[200px]" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackButtonClick({
+                  button_text: "Tirar dúvida no WhatsApp",
+                  button_location: "pricing",
+                  button_action: "whatsapp",
+                })
+              }
+            >
               <FaWhatsapp className="h-4 w-4" aria-hidden />
               Tirar dúvida no WhatsApp
             </a>

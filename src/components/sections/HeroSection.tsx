@@ -3,9 +3,17 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
 import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
+    trackButtonClick({
+      button_text: "Ver como funciona",
+      button_location: "hero",
+      button_action: "scroll",
+      nav_section: id,
+    });
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -75,7 +83,17 @@ const HeroSection = () => {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <Button size="lg" className="gap-2 shadow-primary" asChild>
-                <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                <a
+                  href={APP_SIGNUP_URL}
+                  {...externalAppLinkProps}
+                  onClick={() =>
+                    trackButtonClick({
+                      button_text: "Começar a organizar meus arquivos",
+                      button_location: "hero",
+                      button_action: "signup",
+                    })
+                  }
+                >
                   Começar a organizar meus arquivos
                   <ArrowRight className="h-4 w-4" />
                 </a>

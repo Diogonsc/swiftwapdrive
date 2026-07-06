@@ -3,11 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, location: "header" | "header_mobile") => {
+    trackButtonClick({
+      button_text: id,
+      button_location: location,
+      button_action: "navigation",
+      nav_section: id,
+    });
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -34,31 +42,31 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           <button
-            onClick={() => scrollToSection("como-funciona")}
+            onClick={() => scrollToSection("como-funciona", "header")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Como funciona
           </button>
           <button
-            onClick={() => scrollToSection("sobre")}
+            onClick={() => scrollToSection("sobre", "header")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Benefícios
           </button>
           <button
-            onClick={() => scrollToSection("publico")}
+            onClick={() => scrollToSection("publico", "header")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Para quem é
           </button>
           <button
-            onClick={() => scrollToSection("planos")}
+            onClick={() => scrollToSection("planos", "header")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Preço
           </button>
           <button
-            onClick={() => scrollToSection("faq")}
+            onClick={() => scrollToSection("faq", "header")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             FAQ
@@ -67,7 +75,17 @@ const Header = () => {
 
         <div className="hidden md:flex">
           <Button asChild>
-            <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+            <a
+              href={APP_SIGNUP_URL}
+              {...externalAppLinkProps}
+              onClick={() =>
+                trackButtonClick({
+                  button_text: "Começar agora",
+                  button_location: "header",
+                  button_action: "signup",
+                })
+              }
+            >
               Começar agora
             </a>
           </Button>
@@ -92,37 +110,47 @@ const Header = () => {
         <div className="border-t border-border bg-background md:hidden">
           <nav className="container flex flex-col gap-4 py-4">
             <button
-              onClick={() => scrollToSection("como-funciona")}
+              onClick={() => scrollToSection("como-funciona", "header_mobile")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Como funciona
             </button>
             <button
-              onClick={() => scrollToSection("sobre")}
+              onClick={() => scrollToSection("sobre", "header_mobile")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Benefícios
             </button>
             <button
-              onClick={() => scrollToSection("publico")}
+              onClick={() => scrollToSection("publico", "header_mobile")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Para quem é
             </button>
             <button
-              onClick={() => scrollToSection("planos")}
+              onClick={() => scrollToSection("planos", "header_mobile")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Preço
             </button>
             <button
-              onClick={() => scrollToSection("faq")}
+              onClick={() => scrollToSection("faq", "header_mobile")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               FAQ
             </button>
             <Button asChild className="w-full">
-              <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+              <a
+                href={APP_SIGNUP_URL}
+                {...externalAppLinkProps}
+                onClick={() =>
+                  trackButtonClick({
+                    button_text: "Começar agora",
+                    button_location: "header_mobile",
+                    button_action: "signup",
+                  })
+                }
+              >
                 Começar agora
               </a>
             </Button>

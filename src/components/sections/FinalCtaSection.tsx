@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { FaWhatsapp } from "react-icons/fa6";
 import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
@@ -32,7 +33,17 @@ const FinalCtaSection = () => {
                   className="gap-2 border-0 bg-white text-foreground shadow-lg hover:bg-white/95 sm:min-w-[220px]"
                   asChild
                 >
-                  <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                  <a
+                    href={APP_SIGNUP_URL}
+                    {...externalAppLinkProps}
+                    onClick={() =>
+                      trackButtonClick({
+                        button_text: "Começar agora",
+                        button_location: "final_cta",
+                        button_action: "signup",
+                      })
+                    }
+                  >
                     Começar agora
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -43,7 +54,18 @@ const FinalCtaSection = () => {
                   className="border-white/80 bg-white/10 text-white hover:bg-white/20 hover:text-white sm:min-w-[220px]"
                   asChild
                 >
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackButtonClick({
+                        button_text: "Falar no WhatsApp",
+                        button_location: "final_cta",
+                        button_action: "whatsapp",
+                      })
+                    }
+                  >
                     <FaWhatsapp className="h-4 w-4" aria-hidden />
                     Falar no WhatsApp
                   </a>

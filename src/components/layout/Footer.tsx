@@ -3,6 +3,7 @@ import { ArrowRight, Mail, Shield } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
@@ -54,7 +55,17 @@ const Footer = () => {
             </div>
 
             <Button size="lg" className="mt-6 gap-2 shadow-primary" asChild>
-              <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+              <a
+                href={APP_SIGNUP_URL}
+                {...externalAppLinkProps}
+                onClick={() =>
+                  trackButtonClick({
+                    button_text: "Começar agora",
+                    button_location: "footer",
+                    button_action: "signup",
+                  })
+                }
+              >
                 Começar agora
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -126,6 +137,13 @@ const Footer = () => {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackButtonClick({
+                      button_text: "WhatsApp Business",
+                      button_location: "footer",
+                      button_action: "whatsapp",
+                    })
+                  }
                   className="group flex items-start gap-3 text-sm text-white/70 transition-colors hover:text-white"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 transition-colors group-hover:bg-primary/20">

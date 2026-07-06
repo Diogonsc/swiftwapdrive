@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { FaWhatsapp } from "react-icons/fa6";
 import { APP_SIGNUP_URL, externalAppLinkProps } from "@/lib/app-links";
+import { trackButtonClick } from "@/lib/analytics";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
@@ -90,13 +91,34 @@ const FaqSection = () => {
             </p>
             <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Button size="lg" className="gap-2 shadow-primary sm:min-w-[200px]" asChild>
-                <a href={APP_SIGNUP_URL} {...externalAppLinkProps}>
+                <a
+                  href={APP_SIGNUP_URL}
+                  {...externalAppLinkProps}
+                  onClick={() =>
+                    trackButtonClick({
+                      button_text: "Começar agora",
+                      button_location: "faq",
+                      button_action: "signup",
+                    })
+                  }
+                >
                   Começar agora
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="sm:min-w-[200px]" asChild>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackButtonClick({
+                      button_text: "Tirar dúvida no WhatsApp",
+                      button_location: "faq",
+                      button_action: "whatsapp",
+                    })
+                  }
+                >
                   <FaWhatsapp className="h-4 w-4" aria-hidden />
                   Tirar dúvida no WhatsApp
                 </a>
