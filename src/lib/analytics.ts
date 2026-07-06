@@ -1,3 +1,5 @@
+import ReactGA from "react-ga4";
+
 export const GA_MEASUREMENT_ID = "G-6P46479MVT";
 
 export type ButtonAction = "signup" | "whatsapp" | "scroll" | "navigation";
@@ -10,17 +12,6 @@ export type ButtonClickParams = {
   nav_section?: string;
 };
 
-declare global {
-  interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
-  }
-}
-
 export function trackButtonClick(params: ButtonClickParams) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
-    return;
-  }
-
-  window.gtag("event", "button_click", params);
+  ReactGA.event("button_click", params);
 }
