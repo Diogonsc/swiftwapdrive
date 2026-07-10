@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -9,6 +9,12 @@ import { cn } from "@/lib/utils";
 
 const WHATSAPP_URL = "https://wa.me/5521973819373";
 
+type PlanFeature = {
+  label: string;
+  included?: boolean;
+  highlight?: boolean;
+};
+
 const PLANS = [
   {
     id: "starter",
@@ -17,10 +23,11 @@ const PLANS = [
     fileLimit: 80,
     popular: false,
     features: [
-      "Até 80 arquivos automatizados por mês",
-      "Integração com Google Drive",
-      "Organização automática",
-    ],
+      { label: "Até 80 arquivos automatizados por mês" },
+      { label: "Integração com Google Drive" },
+      { label: "Organização automática" },
+      { label: "Classificação por IA não incluída", included: false },
+    ] satisfies PlanFeature[],
   },
   {
     id: "profissional",
@@ -29,11 +36,13 @@ const PLANS = [
     fileLimit: 200,
     popular: true,
     features: [
-      "Até 200 arquivos automatizados por mês",
-      "Integração com Google Drive",
-      "Organização automática",
-      "Suporte",
-    ],
+      { label: "Até 200 arquivos automatizados por mês" },
+      { label: "Integração com Google Drive" },
+      { label: "Organização automática" },
+      { label: "Suporte" },
+      { label: "Classificação inteligente de documentos por IA", highlight: true },
+      { label: "Até 120 extrações por IA inclusas/mês", highlight: true },
+    ] satisfies PlanFeature[],
   },
   {
     id: "scale",
@@ -42,11 +51,13 @@ const PLANS = [
     fileLimit: 600,
     popular: false,
     features: [
-      "Até 600 arquivos automatizados por mês",
-      "Integração com Google Drive",
-      "Organização automática",
-      "Prioridade no suporte",
-    ],
+      { label: "Até 600 arquivos automatizados por mês" },
+      { label: "Integração com Google Drive" },
+      { label: "Organização automática" },
+      { label: "Prioridade no suporte" },
+      { label: "Classificação inteligente de documentos por IA", highlight: true },
+      { label: "Até 350 extrações por IA inclusas/mês", highlight: true },
+    ] satisfies PlanFeature[],
   },
 ] as const;
 
@@ -110,14 +121,48 @@ const PricingSection = () => {
                 </div>
 
                 <ul className="mt-8 flex-1 space-y-3.5">
-                  {plan.features.map((label) => (
-                    <li key={label} className="flex gap-3 text-sm text-muted-foreground">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                        <Check className="h-3 w-3 text-primary" aria-hidden />
-                      </span>
-                      <span className="leading-snug">{label}</span>
-                    </li>
-                  ))}
+                  {plan.features.map((feature) => {
+                    const included = feature.included !== false;
+                    const highlight = feature.highlight === true;
+
+                    return (
+                      <li
+                        key={feature.label}
+                        className={cn(
+                          "flex gap-3 text-sm",
+                          included
+                            ? highlight
+                              ? "text-foreground"
+                              : "text-muted-foreground"
+                            : "text-muted-foreground/70",
+                        )}
+                      >
+                        <span
+                          className={cn(
+                            "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full",
+                            included ? "bg-primary/10" : "bg-muted",
+                          )}
+                        >
+                          {included ? (
+                            <Check className="h-3 w-3 text-primary" aria-hidden />
+                          ) : (
+                            <X className="h-3 w-3 text-muted-foreground/70" aria-hidden />
+                          )}
+                        </span>
+                        <span className={cn("leading-snug", highlight && "font-medium")}>
+                          {feature.label}
+                          {highlight && (
+                            <Badge
+                              variant="secondary"
+                              className="ml-2 inline-flex border-primary/20 bg-primary/10 px-2 py-0 text-[10px] font-semibold text-primary"
+                            >
+                              Novo
+                            </Badge>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <Button
@@ -153,6 +198,10 @@ const PricingSection = () => {
           <p className="text-sm leading-relaxed text-muted-foreground">
             200 arquivos por mês equivale a cerca de 6–7 arquivos por dia — suficiente para a maioria dos
             profissionais.
+          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Classificação por IA disponível nos planos Profissional e Scale. Extrações adicionais além do
+            limite mensal não são realizadas automaticamente — apenas o arquivo é salvo normalmente.
           </p>
         </ScrollReveal>
 
