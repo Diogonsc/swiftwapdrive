@@ -1,10 +1,10 @@
 import {
-  Bot,
   Clock3,
   FolderTree,
   HardDriveDownload,
   Search,
   Shield,
+  Sparkles,
   TrendingUp,
   Zap,
 } from "lucide-react";
@@ -49,9 +49,9 @@ const benefits = [
     description: "Encontre tudo organizado por cliente, data e tipo.",
   },
   {
-    icon: Bot,
-    title: "Automação",
-    description: "Do WhatsApp ao Drive em segundos, sem intervenção.",
+    icon: Sparkles,
+    title: "Classificação por IA",
+    description: "Documentos identificados e organizados por tipo.",
   },
 ];
 

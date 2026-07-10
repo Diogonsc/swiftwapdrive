@@ -37,6 +37,11 @@ const FAQ_ITEMS = [
     answer: "Arquivos adicionais são cobrados por uso: R$0,25 por arquivo excedente.",
   },
   {
+    question: "O que é a classificação por IA?",
+    answer:
+      "Nos planos Profissional e Scale, cada documento recebido é analisado automaticamente e classificado por tipo (RG, comprovante de pagamento, contrato, nota fiscal e outros) — sem esforço manual. O plano Starter não inclui esse recurso, mas os arquivos continuam sendo salvos e organizados normalmente.",
+  },
+  {
     question: "Posso cancelar quando quiser?",
     answer: "Sim. Você pode cancelar a qualquer momento.",
   },

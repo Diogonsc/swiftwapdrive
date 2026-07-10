@@ -6,6 +6,11 @@ import { cn } from "@/lib/utils";
 const rows = [
   { label: "Tempo", without: "Horas baixando e organizando manualmente", with: "Automático em segundos" },
   { label: "Organização", without: "Pastas bagunçadas e arquivos perdidos", with: "Regras inteligentes por cliente, data e tipo" },
+  {
+    label: "Classificação",
+    without: "Você teria que ler e organizar cada documento manualmente",
+    with: "Classificação automática por IA (RG, comprovante, contrato e mais)",
+  },
   { label: "Backup", without: "Depende de lembrar de salvar", with: "Cópia automática no Google Drive" },
   { label: "Busca", without: "Procurar no chat ou pedir de novo", with: "Encontre tudo na pasta certa" },
   { label: "Segurança", without: "Arquivos expostos no celular", with: "API oficial + LGPD" },
